@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+         body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #1a1a2e;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #0f0f1a;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+           
+        }
+
+        header h1 {
+            color: #a29bfe;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+           
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #a29bfe;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            background: linear-gradient(135deg, #1a1a2e, #0f3460);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #a29bfe;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 24px;
+            background: #a29bfe;
+            color: #1a1a2e;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #6c5ce7;
+            color: white;
+        }
+
+        section {
+            padding: 100px;
+            text-align: center;
+        }
+
+        #about, #projects, #contact {
+            margin-top: 80px;
+            background: #12122b;
+            padding: 50px;
+            border-radius: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Seu Nome</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h2>Desenvolvedor | Criador de RPGs</h2>
+            <p>Construindo experiências digitais e sistemas para RPGs de mesa.</p>
+            <a href="#projects" class="btn">Ver Projetos</a>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>Sobre Mim</h2>
+        <p>Sou um desenvolvedor apaixonado por tecnologia e RPGs, criando soluções digitais e sistemas interativos.</p>
+    </section>
+    
+    <section id="projects">
+        <h2>Meus Projetos</h2>
+        <p>Aqui você encontrará alguns dos projetos que desenvolvi, incluindo ferramentas para RPGs de mesa.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contato</h2>
+        <p>Entre em contato comigo para colaborações ou dúvidas.</p>
+    </section>
+</body>
+</html>
