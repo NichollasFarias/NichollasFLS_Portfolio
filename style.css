@@ -130,7 +130,7 @@ body {
 }
 
 .AbaSobreCertif img {
-    width: 500px; /* Ajuste o tamanho da imagem */
+    width: 500px; 
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
@@ -179,6 +179,48 @@ body {
 }
 
 /* Aba Projetos */
+.AbaProjetos{
+    margin-top: 40px;
+    height: auto;
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+}
+
+.AbaProjetos h3{
+    font-size: 35px;
+    text-align: center;
+    padding: 30px;
+}
+
+.OrganizarProjeto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+.Xprojeto{
+    width: 400px;
+    padding: 20px;
+    background: linear-gradient(0deg,  #1a1a2e, #0f4960);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.Xprojeto h3{
+    font-size: 30px;
+    margin: 0;
+}
+
+.Xprojeto a{
+    display: block;
+    color: #ffffff;
+    text-decoration: underline;
+    font-size: 20px;
+    padding: 5px 0;
+}
 
 /* Aba RPG */
 

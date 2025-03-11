@@ -3,138 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Meus Projetos</title>
     <style>
-         body {
-            margin: 0;
+        body {
             font-family: Arial, sans-serif;
-            background: #1a1a2e;
+            background-color: #1a1a2e;
             color: white;
+            text-align: center;
         }
 
-        header {
+        .projects-container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background: #0f0f1a;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-           
-        }
-
-        header h1 {
-            color: #a29bfe;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-           
-        }
-
-        nav ul li {
-            display: inline;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #a29bfe;
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            flex-direction: column;
-            background: linear-gradient(135deg, #1a1a2e, #0f3460);
+            gap: 20px;
+            margin-top: 50px;
         }
 
-        .hero h2 {
-            font-size: 2.5rem;
-            color: #a29bfe;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 24px;
-            background: #a29bfe;
-            color: #1a1a2e;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: #6c5ce7;
-            color: white;
-        }
-
-        section {
-            padding: 100px;
-            text-align: center;
-        }
-
-        #about, #projects, #contact {
-            margin-top: 80px;
-            background: #12122b;
-            padding: 50px;
+        .project-box {
+            width: 200px;
+            padding: 20px;
+            background: #282c3f;
             border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            position: relative; /* Permite que os itens internos sejam posicionados corretamente */
         }
-        
+
+        .project-box:hover {
+            background: #404559;
+        }
+
+        .project-box h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .project-list {
+            display: none;
+            background: #1a1a2e;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 10px; /* Espaço entre o título e a lista */
+        }
+
+        .project-list a {
+            display: block;
+            color: #a29bfe;
+            text-decoration: none;
+            padding: 5px 0;
+        }
+
+        .project-list a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Seu Nome</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section class="hero">
-        <div class="container">
-            <h2>Desenvolvedor | Criador de RPGs</h2>
-            <p>Construindo experiências digitais e sistemas para RPGs de mesa.</p>
-            <a href="#projects" class="btn">Ver Projetos</a>
+
+    <h1>Meus Projetos</h1>
+    <div class="projects-container">
+        <!-- Quadrado 1: Python -->
+        <div class="project-box" onclick="toggleProjects('python')">
+            <h3>Python</h3>
+            <div id="python" class="project-list">
+                <a href="https://github.com/seu-usuario/projeto1" target="_blank">Projeto 1</a>
+                <a href="https://github.com/seu-usuario/projeto2" target="_blank">Projeto 2</a>
+            </div>
         </div>
-    </section>
-    
-    <section id="about">
-        <h2>Sobre Mim</h2>
-        <p>Sou um desenvolvedor apaixonado por tecnologia e RPGs, criando soluções digitais e sistemas interativos.</p>
-    </section>
-    
-    <section id="projects">
-        <h2>Meus Projetos</h2>
-        <p>Aqui você encontrará alguns dos projetos que desenvolvi, incluindo ferramentas para RPGs de mesa.</p>
-    </section>
-    
-    <section id="contact">
-        <h2>Contato</h2>
-        <p>Entre em contato comigo para colaborações ou dúvidas.</p>
-    </section>
+
+        <!-- Quadrado 2: JavaScript -->
+        <div class="project-box" onclick="toggleProjects('javascript')">
+            <h3>JavaScript</h3>
+            <div id="javascript" class="project-list">
+                <a href="https://github.com/seu-usuario/projeto3" target="_blank">Projeto 3</a>
+                <a href="https://github.com/seu-usuario/projeto4" target="_blank">Projeto 4</a>
+            </div>
+        </div>
+
+        <!-- Quadrado 3: C# -->
+        <div class="project-box" onclick="toggleProjects('csharp')">
+            <h3>C#</h3>
+            <div id="csharp" class="project-list">
+                <a href="https://github.com/seu-usuario/projeto5" target="_blank">Projeto 5</a>
+                <a href="https://github.com/seu-usuario/projeto6" target="_blank">Projeto 6</a>
+            </div>
+        </div>
+
+        <!-- Quadrado 4: C++ -->
+        <div class="project-box" onclick="toggleProjects('cplusplus')">
+            <h3>C++</h3>
+            <div id="cplusplus" class="project-list">
+                <a href="https://github.com/seu-usuario/projeto7" target="_blank">Projeto 7</a>
+                <a href="https://github.com/seu-usuario/projeto8" target="_blank">Projeto 8</a>
+            </div>
+        </div>
+
+        <!-- Quadrado 5: Node.js -->
+        <div class="project-box" onclick="toggleProjects('nodejs')">
+            <h3>Node.js</h3>
+            <div id="nodejs" class="project-list">
+                <a href="https://github.com/seu-usuario/projeto9" target="_blank">Projeto 9</a>
+                <a href="https://github.com/seu-usuario/projeto10" target="_blank">Projeto 10</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleProjects(id) {
+            // Fecha todos os outros antes de abrir o novo
+            const allLists = document.querySelectorAll('.project-list');
+            allLists.forEach(list => {
+                if (list.id !== id) {
+                    list.style.display = "none"; // Fecha todos os outros
+                }
+            });
+
+            // Alterna a exibição apenas do que foi clicado
+            const selectedList = document.getElementById(id);
+            selectedList.style.display = selectedList.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
 </body>
 </html>
