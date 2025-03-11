@@ -222,7 +222,49 @@ body {
     padding: 5px 0;
 }
 
-/* Aba RPG */
-
 /* Aba Contato */
 
+.AbaContato {
+    margin-top: 40px;
+    padding: 50px;
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+    text-align: center;
+    color: white;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-info p {
+    font-size: 16px;
+}
+
+.contact-info a {
+    color: #a29bfe;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Botão de Baixar Currículo */
+.btn-cv {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn-cv:hover {
+    background-color: #218c54;
+}
