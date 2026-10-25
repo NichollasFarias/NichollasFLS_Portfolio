@@ -1,0 +1,1171 @@
+{
+  "tx": {
+    "pt": {
+      "skip": "Pular para o conteúdo",
+      "navWork": "Projetos",
+      "navExperience": "Experiência",
+      "navAbout": "Sobre",
+      "navContact": "Contato",
+      "heroEyebrow": "PORTFÓLIO / 2026",
+      "heroDiscipline": "SOFTWARE · HARDWARE · CRIAÇÃO",
+      "heroPill": "Engenharia além da tela",
+      "heroTitle": "Ideias viram<br><em>sistemas.</em><br><span>Projetos viram realidade.</span>",
+      "heroDescription": "Sou <strong>Nichollas F. L. Santos</strong>, <strong>Engenheiro da Computação</strong>. Desenvolvo aplicativos e exploro o encontro entre código, eletrônica, automação e criatividade.",
+      "explore": "Explorar projetos",
+      "knowMe": "Minha trajetória",
+      "scroll": "CONTINUE EXPLORANDO",
+      "selectedWork": "TRABALHO EM DESTAQUE",
+      "featureCategory": "TCC DE ENGENHARIA · 2024",
+      "featureTitle2": "Segurança modular.",
+      "featureDesc": "Uma solução física e digital para pequenas empresas: cinco módulos de monitoramento, aplicativo móvel e central de gestão para funcionários e estoque. Desenvolvido e testado em protótipo funcional.",
+      "featureDetails": "Explorar estudo de caso",
+      "article": "Artigo científico",
+      "realPhoto": "FOTO REAL DO PROTÓTIPO ↗",
+      "modules": "módulos integrados",
+      "proofModules": "módulos de hardware",
+      "proofPlatforms": "frentes de software e infraestrutura: mobile, desktop e nuvem",
+      "proofResearch": "TCC de graduação · COBRIC",
+      "projectsNav": "CATÁLOGO DE PROJETOS",
+      "projectsIntro": "EXPERIÊNCIAS EM DIFERENTES FRENTES",
+      "projectsTitle": "O que eu <em>construí.</em>",
+      "projectsLead": "Jogos, aplicativos, eletrônica, ciência e projetos autorais. Cada trabalho tem um contexto, uma contribuição e um aprendizado.",
+      "filterAll": "Todos",
+      "filterApps": "Aplicativos",
+      "filterEng": "Engenharia",
+      "filterGames": "Jogos",
+      "filterChem": "Química",
+      "filterWork": "Profissional",
+      "filterArchive": "Acervo",
+      "showing": "projetos exibidos",
+      "privateNote": "Projetos privados e confidenciais não aparecem neste catálogo.",
+      "catalogNote": "Projetos acadêmicos são apresentados com seu escopo real. Projetos da CodeCycle têm informações públicas limitadas. Protótipos e produtos em desenvolvimento estão identificados.",
+      "experienceLabel": "EXPERIÊNCIA PROFISSIONAL",
+      "currentRole": "ATUAÇÃO ATUAL",
+      "experienceTitle": "Código em<br><em>produção.</em>",
+      "experienceSummary": "Na CodeCycle, atuo com desenvolvimento e manutenção de aplicativos, integrando a equipe técnica dos produtos. Minha atuação envolve implementação de interfaces, funcionalidades, correção de problemas e evolução dos sistemas.",
+      "present": "PRESENTE",
+      "roleTitle": "Desenvolvimento de Software / Aplicativos · PJ",
+      "cofShort": "Aplicativo educacional para alunos de medicina; projeto funcional, posteriormente descontinuado.",
+      "globalShort": "Participação técnica na continuidade e manutenção do aplicativo publicado.",
+      "shelfShort": "Participação técnica na evolução do aplicativo de estoque.",
+      "nda": "Os produtos pertencem à CodeCycle. Não são exibidos código privado, arquitetura interna ou equipamentos confidenciais.",
+      "story": "MINHA TRAJETÓRIA",
+      "beyondCode": "ALÉM DO CÓDIGO",
+      "aboutTitle": "Curiosidade<br>é meu <em>motor.</em>",
+      "aboutIntro": "Comecei criando jogos e explorando interfaces. Na engenharia encontrei hardware e automação; no trabalho, aplicativos e problemas reais. Gosto de entender como as partes se conectam — e fazer a ideia funcionar.",
+      "aboutSecond": "Também concluí formação técnica em Química, ampliando meu interesse por ferramentas científicas e processos. Em paralelo, desenvolvo projetos autorais sob a marca Lancelot Forge.",
+      "visitGithub": "Conhecer meu GitHub",
+      "t19": "Técnico em Jogos Digitais",
+      "t19p": "ETEC Aristóteles Ferreira · Jogos 2D, Unity e C#.",
+      "t24": "Engenharia da Computação",
+      "t24p": "Universidade Santa Cecília · TCC de segurança modular e publicação acadêmica.",
+      "t25": "CodeCycle",
+      "t25p": "Início da atuação profissional no desenvolvimento de aplicativos.",
+      "t26": "Técnico em Química e projetos autorais",
+      "t26p": "Conclusão da formação técnica e desenvolvimento de produtos independentes.",
+      "quote": "Criatividade para imaginar. Engenharia para transformar em algo real.",
+      "contactLabel": "CONTATO",
+      "available": "ABERTO A PROJETOS E OPORTUNIDADES",
+      "contactTitle": "Vamos criar<br><em>algo juntos?</em>",
+      "contactText": "Seja para desenvolver um aplicativo, colaborar num projeto ou conversar sobre engenharia e tecnologia, podemos começar por uma mensagem.",
+      "copyEmail": "Copiar e-mail",
+      "backTop": "VOLTAR AO TOPO ↑",
+      "statusDone": "Concluído",
+      "statusProto": "Protótipo",
+      "statusWip": "Em desenvolvimento",
+      "statusArchive": "Acadêmico",
+      "statusDiscontinued": "Descontinuado",
+      "statusWork": "Equipe técnica",
+      "statusShown": "Demonstrado",
+      "statusUnknown": "A confirmar",
+      "openProject": "Ver detalhes",
+      "role": "MINHA CONTRIBUIÇÃO",
+      "scope": "CONTEXTO / RESULTADO",
+      "gallery": "REGISTROS REAIS",
+      "code": "Repositório público",
+      "publication": "Publicação acadêmica",
+      "playStore": "Página pública do aplicativo",
+      "youtube": "Vídeo público",
+      "noMedia": "Imagens ou demonstração ainda não disponíveis para este projeto.",
+      "contactCopied": "E-mail copiado!",
+      "contactFallback": "E-mail: ni.chollas@outlook.com",
+      "mediaPhoto": "Foto / captura do projeto",
+      "mediaVideo": "Demonstração em vídeo",
+      "logoNote": "Visual provisório — sem screenshots do produto"
+    },
+    "en": {
+      "skip": "Skip to content",
+      "navWork": "Projects",
+      "navExperience": "Experience",
+      "navAbout": "About",
+      "navContact": "Contact",
+      "heroEyebrow": "PORTFOLIO / 2026",
+      "heroDiscipline": "SOFTWARE · HARDWARE · CREATION",
+      "heroPill": "Engineering beyond the screen",
+      "heroTitle": "Ideas become<br><em>systems.</em><br><span>Projects become real.</span>",
+      "heroDescription": "I am <strong>Nichollas F. L. Santos</strong>, a <strong>Computer Engineer</strong>. I build applications and explore the intersection of software, electronics, automation, and creativity.",
+      "explore": "Explore projects",
+      "knowMe": "My journey",
+      "scroll": "KEEP EXPLORING",
+      "selectedWork": "FEATURED WORK",
+      "featureCategory": "ENGINEERING FINAL PROJECT · 2024",
+      "featureTitle2": "Modular security.",
+      "featureDesc": "A physical and digital solution for small businesses: five monitoring modules, a mobile app, and a desktop hub for employee and inventory management. Developed and tested as a working prototype.",
+      "featureDetails": "Explore case study",
+      "article": "Research article",
+      "realPhoto": "ACTUAL PROTOTYPE PHOTO ↗",
+      "modules": "integrated modules",
+      "proofModules": "hardware modules",
+      "proofPlatforms": "software & infrastructure areas: mobile, desktop, cloud",
+      "proofResearch": "Engineering capstone · COBRIC",
+      "projectsNav": "PROJECT PORTFOLIO",
+      "projectsIntro": "WORK ACROSS DIFFERENT DISCIPLINES",
+      "projectsTitle": "What I <em>built.</em>",
+      "projectsLead": "Games, applications, electronics, science, and independent products. Every project has context, a contribution, and lessons learned.",
+      "filterAll": "All",
+      "filterApps": "Applications",
+      "filterEng": "Engineering",
+      "filterGames": "Games",
+      "filterChem": "Chemistry",
+      "filterWork": "Professional",
+      "filterArchive": "Archive",
+      "showing": "projects shown",
+      "privateNote": "Private and confidential projects are not displayed.",
+      "catalogNote": "Academic projects are described within their real scope. CodeCycle work only includes limited public information. Prototypes and work-in-progress products are identified.",
+      "experienceLabel": "PROFESSIONAL EXPERIENCE",
+      "currentRole": "CURRENT ROLE",
+      "experienceTitle": "Software in<br><em>production.</em>",
+      "experienceSummary": "At CodeCycle I work on application development and maintenance as part of the products’ technical team. My responsibilities include implementing interfaces and features, fixing issues, and evolving applications.",
+      "present": "PRESENT",
+      "roleTitle": "Software / App Developer · Contractor",
+      "cofShort": "Educational application for medical students; functional project, later discontinued.",
+      "globalShort": "Technical involvement in the ongoing development and maintenance of the published app.",
+      "shelfShort": "Technical involvement in the evolution of the inventory application.",
+      "nda": "These products belong to CodeCycle. No private code, internal architecture, or confidential equipment is shown.",
+      "story": "MY JOURNEY",
+      "beyondCode": "BEYOND THE CODE",
+      "aboutTitle": "Curiosity is<br>my <em>engine.</em>",
+      "aboutIntro": "I started by making games and exploring interfaces. Engineering introduced me to hardware and automation; work brought real-world software challenges. I enjoy understanding how everything connects — and making the idea work.",
+      "aboutSecond": "I also completed a technical qualification in Chemistry, expanding my interest in scientific tools and processes. In parallel, I build independent projects under the Lancelot Forge brand.",
+      "visitGithub": "Explore my GitHub",
+      "t19": "Game Development Technical Course",
+      "t19p": "ETEC Aristóteles Ferreira · 2D games, Unity, and C#.",
+      "t24": "Computer Engineering",
+      "t24p": "Santa Cecília University · Modular security capstone and research publication.",
+      "t25": "CodeCycle",
+      "t25p": "Started professional work in application development.",
+      "t26": "Chemistry Technical Course & side projects",
+      "t26p": "Completed technical qualification and continued building independent products.",
+      "quote": "Creativity to imagine. Engineering to make it real.",
+      "contactLabel": "CONTACT",
+      "available": "OPEN TO PROJECTS AND OPPORTUNITIES",
+      "contactTitle": "Let’s build<br><em>something together.</em>",
+      "contactText": "Whether you need an app, a project collaborator, or just want to talk about engineering and technology, let’s start with a message.",
+      "copyEmail": "Copy email",
+      "backTop": "BACK TO TOP ↑",
+      "statusDone": "Completed",
+      "statusProto": "Prototype",
+      "statusWip": "In development",
+      "statusArchive": "Academic",
+      "statusDiscontinued": "Discontinued",
+      "statusWork": "Technical team",
+      "statusShown": "Demonstrated",
+      "statusUnknown": "To confirm",
+      "openProject": "View details",
+      "role": "MY CONTRIBUTION",
+      "scope": "CONTEXT / OUTCOME",
+      "gallery": "ACTUAL PROJECT MEDIA",
+      "code": "Public repository",
+      "publication": "Research publication",
+      "playStore": "Public app listing",
+      "youtube": "Public video",
+      "noMedia": "Images or demonstrations are not available yet for this project.",
+      "contactCopied": "Email copied!",
+      "contactFallback": "Email: ni.chollas@outlook.com",
+      "mediaPhoto": "Project photo / screenshot",
+      "mediaVideo": "Video demonstration",
+      "logoNote": "Provisional visual — not a product screenshot"
+    }
+  },
+  "projects": [
+    {
+      "id": "safetrack",
+      "title": {
+        "pt": "SafeTrack / Segurança Modular",
+        "en": "SafeTrack / Modular Security"
+      },
+      "category": "eng",
+      "year": "2024",
+      "status": "statusProto",
+      "tech": [
+        "ESP32",
+        "Expo",
+        "C#",
+        "Firebase"
+      ],
+      "image": "tcc-overview.webp",
+      "links": [
+        [
+          "publication",
+          "https://periodicos.unisanta.br/COB/article/view/2305"
+        ]
+      ],
+      "text": {
+        "pt": "Sistema de segurança modular, aplicativo mobile e central de gestão com estoque e funcionários.",
+        "en": "Modular security system, mobile application, and management hub with inventory and employee records."
+      },
+      "details": {
+        "pt": "Projeto final de Engenharia da Computação, idealizado para pequenas empresas com foco em baixo custo. Cinco módulos: alarme, temperatura/gás, câmera/presença, energia e leitura RFID. O protótipo físico foi testado em casa e apresentado no TCC.",
+        "en": "Computer Engineering final project designed for small businesses with a low-cost focus. Five modules: alarm, temperature/gas, camera/motion, power monitoring, and RFID. The working prototype was tested at home and presented as a capstone."
+      },
+      "role": {
+        "pt": "Desenvolvimento técnico individual relatado: hardware e integração dos módulos, aplicativo mobile em Expo, central Windows em C# e comunicação pelo Firebase Realtime Database. Artigo científico com coautoria acadêmica devidamente creditada.",
+        "en": "Individually implemented technical work as reported: hardware modules and integration, Expo mobile app, C# Windows desktop hub, and Firebase Realtime Database. Academic coauthors are credited in the publication."
+      },
+      "media": [
+        [
+          "img",
+          "tcc-overview.webp"
+        ],
+        [
+          "img",
+          "safetrack-app.webp"
+        ],
+        [
+          "img",
+          "safetrack-camera.webp"
+        ],
+        [
+          "img",
+          "safetrack-environment.webp"
+        ],
+        [
+          "img",
+          "tcc-rfid.webp"
+        ],
+        [
+          "img",
+          "tcc-module.webp"
+        ],
+        [
+          "video",
+          "safetrack-desktop.mp4"
+        ],
+        [
+          "video",
+          "safetrack-alarm.mp4"
+        ],
+        [
+          "video",
+          "safetrack-camera-unit.mp4"
+        ],
+        [
+          "video",
+          "safetrack-enclosure.mp4"
+        ]
+      ],
+      "mediaKind": "photo",
+      "result": {
+        "pt": "Protótipo físico funcional, testado em ambiente doméstico e apresentado no TCC de 2024. Publicação acadêmica no COBRIC. Não foram fornecidas métricas de implantação comercial.",
+        "en": "Working physical prototype, tested at home and presented in the 2024 capstone. Academic publication at COBRIC. No commercial deployment metrics were provided."
+      }
+    },
+    {
+      "id": "linecar",
+      "title": {
+        "pt": "Carrinho Seguidor de Linha",
+        "en": "Line-following car"
+      },
+      "category": "eng",
+      "year": "—",
+      "status": "statusDone",
+      "tech": [
+        "Arduino",
+        "C",
+        "IR",
+        "Motors"
+      ],
+      "image": "line-car-show.webp",
+      "text": {
+        "pt": "Carrinho autônomo que segue uma trajetória com sensores infravermelhos e controle de motores.",
+        "en": "Autonomous line-following car using infrared sensors and motor control."
+      },
+      "details": {
+        "pt": "Protótipo físico de robótica montado durante a faculdade. O veículo utiliza sensores infravermelhos para detectar a linha e motores para corrigir a trajetória. O usuário confirmou que funcionou.",
+        "en": "Physical robotics prototype assembled during college. Infrared sensors detect the track, and motors correct the vehicle’s direction. A functioning result was confirmed."
+      },
+      "role": {
+        "pt": "Montagem física completa do carrinho. A programação foi realizada por outra pessoa.",
+        "en": "Complete physical assembly of the car. Programming was done by another person."
+      },
+      "media": [
+        [
+          "img",
+          "line-car-show.webp"
+        ],
+        [
+          "img",
+          "line-car-chassis.webp"
+        ],
+        [
+          "img",
+          "line-car-wiring.webp"
+        ],
+        [
+          "img",
+          "line-car-event.webp"
+        ]
+      ],
+      "mediaKind": "photo"
+    },
+    {
+      "id": "lembre",
+      "title": {
+        "pt": "Lembre & Pague",
+        "en": "Lembre & Pague"
+      },
+      "category": "apps",
+      "year": "2026",
+      "status": "statusDone",
+      "tech": [
+        "Flutter",
+        "Dart",
+        "SQLite"
+      ],
+      "glyph": "◷",
+      "text": {
+        "pt": "Aplicativo pessoal de controle de contas, recorrências, vencimentos e comprovantes.",
+        "en": "Personal finance organizer for bills, recurring payments, due dates, and receipts."
+      },
+      "details": {
+        "pt": "Aplicativo autoral finalizado em Flutter/Dart e SQLite para organizar contas e lembretes. As imagens são composições promocionais fornecidas pelo autor. Não há lançamento em loja confirmado.",
+        "en": "Completed independent Flutter/Dart and SQLite app for organizing bills and reminders. Images are promotional compositions supplied by the author. No app-store release is confirmed."
+      },
+      "role": {
+        "pt": "Projeto próprio; desenvolvimento em Flutter/Dart e persistência local em SQLite.",
+        "en": "Independent project; Flutter/Dart development and local SQLite persistence."
+      },
+      "image": "lembre-1.webp",
+      "media": [
+        [
+          "img",
+          "lembre-1.webp"
+        ],
+        [
+          "img",
+          "lembre-2.webp"
+        ]
+      ],
+      "mediaKind": "mockup",
+      "collections": [
+        "personal",
+        "forge"
+      ]
+    },
+    {
+      "id": "forge",
+      "title": {
+        "pt": "Lancelot Forge — 3D Print",
+        "en": "Lancelot Forge — 3D Print"
+      },
+      "category": "apps",
+      "year": "2026",
+      "status": "statusWip",
+      "tech": [
+        "Flutter",
+        "Windows",
+        "3D Print"
+      ],
+      "glyph": "⬡",
+      "text": {
+        "pt": "Software de apoio à precificação, propostas e gestão de trabalhos de impressão 3D.",
+        "en": "Tool for pricing, quoting, and managing 3D printing jobs."
+      },
+      "details": {
+        "pt": "Software autoral em desenvolvimento para apoiar orçamentos e a gestão de impressão 3D. A composição visual fornecida apresenta a proposta do produto; não comprova a implementação de todos os elementos ilustrados.",
+        "en": "Independent software in development to support quoting and 3D printing management. The supplied visual composition presents the product direction; it does not verify implementation of every illustrated feature."
+      },
+      "role": {
+        "pt": "Concepção do produto, regras de negócio, implementação e testes.",
+        "en": "Product concept, business rules, implementation, and testing."
+      },
+      "image": "forge-app.webp",
+      "media": [
+        [
+          "img",
+          "forge-app.webp"
+        ]
+      ],
+      "mediaKind": "mockup",
+      "collections": [
+        "personal",
+        "forge"
+      ]
+    },
+    {
+      "id": "quimera",
+      "title": {
+        "pt": "Quimera",
+        "en": "Quimera"
+      },
+      "category": "chem",
+      "year": "2026",
+      "status": "statusWip",
+      "tech": [
+        "Chemistry",
+        "Calculations",
+        "Education"
+      ],
+      "glyph": "⚗",
+      "text": {
+        "pt": "Calculadora didática para auxiliar técnicos em Química em atividades e estudos.",
+        "en": "Educational chemistry calculator for chemistry technicians and students."
+      },
+      "details": {
+        "pt": "Projeto em desenvolvimento que reúne ferramentas de cálculo de Química com foco didático e apoio a rotinas técnicas. Ainda não é apresentado como produto finalizado.",
+        "en": "Work-in-progress toolkit that brings chemistry calculations together for teaching and technical tasks. It is not being presented as a completed product."
+      },
+      "role": {
+        "pt": "Idealização e direcionamento funcional, com desenvolvimento iterativo auxiliado por IA.",
+        "en": "Product direction and functional design, with AI-assisted iterative development."
+      },
+      "image": "quimera.webp",
+      "media": [
+        [
+          "img",
+          "quimera.webp"
+        ],
+        [
+          "img",
+          "quimera-overview.webp"
+        ]
+      ],
+      "mediaKind": "mockup",
+      "collections": [
+        "personal",
+        "forge"
+      ]
+    },
+    {
+      "id": "hunting",
+      "title": {
+        "pt": "Hunting Dogs",
+        "en": "Hunting Dogs"
+      },
+      "category": "games",
+      "year": "2019",
+      "status": "statusProto",
+      "tech": [
+        "Unity",
+        "2D",
+        "Pixel art"
+      ],
+      "glyph": "HD",
+      "text": {
+        "pt": "TCC de Jogos Digitais: protótipo 2D cyberpunk com narrativa original.",
+        "en": "Game Development capstone: a cyberpunk 2D prototype with an original storyline."
+      },
+      "details": {
+        "pt": "Jogo inspirado na ficção cyberpunk, sobre um ex-boxeador coagido a perseguir criminosos e tentando recuperar sua liberdade. O grupo apresentou um alfa inicial; o jogo não foi concluído como lançamento comercial.",
+        "en": "Cyberpunk game about a former boxer forced to hunt criminals while seeking freedom. The team presented an early alpha; it was not finished as a commercial release."
+      },
+      "role": {
+        "pt": "Projeto em grupo. Nichollas criou o roteiro, os conceitos visuais de todos os inimigos e cenários; a programação desses elementos foi feita por outro integrante.",
+        "en": "Team project. Nichollas wrote the storyline and created visual designs for enemies and environments; another member implemented their code."
+      },
+      "links": [
+        [
+          "code",
+          "https://github.com/NichollasFarias/Hunting_Dogs-TCC"
+        ]
+      ],
+      "image": "hunting.webp",
+      "media": [
+        [
+          "img",
+          "hunting.webp"
+        ],
+        [
+          "img",
+          "hunting-poster.webp"
+        ]
+      ],
+      "mediaKind": "poster"
+    },
+    {
+      "id": "acidjump",
+      "title": {
+        "pt": "Acid Jump",
+        "en": "Acid Jump"
+      },
+      "category": "games",
+      "year": "2019",
+      "status": "statusDone",
+      "tech": [
+        "Unity",
+        "2D",
+        "Game Design"
+      ],
+      "glyph": "↑",
+      "text": {
+        "pt": "Jogo de prova: escapar de ácido ascendente, lasers, espinhos e armadilhas.",
+        "en": "Exam project: escape rising acid, lasers, spikes, and other traps."
+      },
+      "details": {
+        "pt": "Jogo em Unity desenvolvido individualmente, com assets iniciais fornecidos pelo professor. O robô precisava alterar a gravidade, alcançar chaves e abrir a porta antes que o ácido subisse.",
+        "en": "Individually built Unity game using initial assets provided by the teacher. The robot switches gravity, collects keys, and reaches the exit before the acid rises."
+      },
+      "role": {
+        "pt": "Implementação individual em Unity, incluindo mecânicas e lógica. As artes foram fornecidas pelo professor.",
+        "en": "Individual Unity implementation, including mechanics and logic. Artwork was supplied by the teacher."
+      },
+      "image": "acid.webp",
+      "media": [
+        [
+          "img",
+          "acid.webp"
+        ],
+        [
+          "video",
+          "acid-gameplay.mp4"
+        ]
+      ],
+      "mediaKind": "gameplay"
+    },
+    {
+      "id": "aditown",
+      "title": {
+        "pt": "Aditown",
+        "en": "Aditown"
+      },
+      "category": "eng",
+      "year": "2020–2021",
+      "status": "statusArchive",
+      "tech": [
+        "C#",
+        "Windows Forms"
+      ],
+      "glyph": "+",
+      "text": {
+        "pt": "Jogo educativo infantil de operações matemáticas, com tempo, pontuação e som.",
+        "en": "Educational math game for children, with a timer, scoring, and sound."
+      },
+      "details": {
+        "pt": "Atividade universitária que pedia a criação de um jogo para ensinar algo às crianças. A aplicação usa operações matemáticas aleatórias, pontuação, tempo e elementos gráficos.",
+        "en": "University assignment to create a children’s educational game. Includes randomized math problems, scoring, timers, and graphic elements."
+      },
+      "role": {
+        "pt": "Programação e desenhos do projeto.",
+        "en": "Code and visual design."
+      },
+      "links": [
+        [
+          "code",
+          "https://github.com/NichollasFarias/Aditown"
+        ]
+      ],
+      "mediaKind": "photo"
+    },
+    {
+      "id": "traverna",
+      "title": {
+        "pt": "Traverna",
+        "en": "Traverna"
+      },
+      "category": "apps",
+      "year": "2026",
+      "status": "statusDone",
+      "tech": [
+        "Desktop",
+        "Social experience"
+      ],
+      "glyph": "T",
+      "text": {
+        "pt": "Experimento de aplicativo para compartilhar jogos, filmes e momentos com amigos.",
+        "en": "Experimental app to share games, movies, and hangouts with friends."
+      },
+      "details": {
+        "pt": "Projeto pessoal concluído, idealizado para compartilhar tela e experiências com amigos. Apresentado como trabalho experimental; o aplicativo não será disponibilizado ao público.",
+        "en": "Completed personal experiment for screen sharing and social experiences with friends. Showcased as a project; the application itself is not distributed."
+      },
+      "role": {
+        "pt": "Concepção e desenvolvimento do experimento.",
+        "en": "Concept and development of the experiment."
+      },
+      "image": "traverna.webp",
+      "media": [
+        [
+          "img",
+          "traverna.webp"
+        ]
+      ],
+      "mediaKind": "mockup",
+      "collections": [
+        "personal"
+      ]
+    },
+    {
+      "id": "neuro",
+      "title": {
+        "pt": "NeuroLaudo",
+        "en": "NeuroLaudo"
+      },
+      "category": "apps",
+      "year": "2026",
+      "status": "statusDone",
+      "tech": [
+        "Windows",
+        "Documents",
+        "PDF"
+      ],
+      "glyph": "N+",
+      "text": {
+        "pt": "Aplicativo para apoiar a organização e a geração de laudos neuropsicológicos.",
+        "en": "Application to support the organization and generation of neuropsychological reports."
+      },
+      "details": {
+        "pt": "Aplicativo concluído para organizar arquivos e apoiar a produção de laudos. As imagens fornecidas mostram uma demonstração com dados fictícios; o software não é distribuído por este portfólio.",
+        "en": "Completed application for organizing files and supporting report preparation. Supplied images show a demonstration using fictional data; the software is not distributed through this portfolio."
+      },
+      "role": {
+        "pt": "Desenvolvimento do aplicativo e evolução das funcionalidades conforme necessidades apresentadas.",
+        "en": "Application development and iterative features based on reported needs."
+      },
+      "image": "neuro-desktop.webp",
+      "media": [
+        [
+          "img",
+          "neuro-desktop.webp"
+        ],
+        [
+          "img",
+          "neuro-flow.webp"
+        ],
+        [
+          "img",
+          "neuro-gallery.webp"
+        ]
+      ],
+      "mediaKind": "demo",
+      "collections": [
+        "personal"
+      ]
+    },
+    {
+      "id": "cof",
+      "title": {
+        "pt": "Cof2Go",
+        "en": "Cof2Go"
+      },
+      "category": "work",
+      "year": "2025",
+      "status": "statusDiscontinued",
+      "tech": [
+        "FlutterFlow",
+        "APIs",
+        "Mobile"
+      ],
+      "glyph": "C2",
+      "text": {
+        "pt": "Aplicativo educacional desenvolvido para aulas e atividades de estudantes de Medicina.",
+        "en": "Educational app developed for medical students’ lessons and coursework."
+      },
+      "details": {
+        "pt": "Projeto profissional para a Medcof. Aplicativo funcional para visualização de videoaulas e atividades, posteriormente descontinuado. Informações restritas às que podem ser divulgadas publicamente.",
+        "en": "Professional project for Medcof. Working app for video lessons and learning activities, subsequently discontinued. Description limited to publicly shareable details."
+      },
+      "role": {
+        "pt": "Montagem integral do aplicativo, implementação de funcionalidades, interfaces segundo design fornecido e integrações de APIs. Projeto realizado no contexto da CodeCycle.",
+        "en": "Application implementation, features, UI based on supplied designs, and API integrations. Developed while working at CodeCycle."
+      },
+      "image": "cof2go.webp",
+      "media": [
+        [
+          "img",
+          "cof2go.webp"
+        ],
+        [
+          "img",
+          "cof2go-overview.webp"
+        ]
+      ],
+      "mediaKind": "mockup"
+    },
+    {
+      "id": "global",
+      "title": {
+        "pt": "GlobalTask",
+        "en": "GlobalTask"
+      },
+      "category": "work",
+      "year": "2026",
+      "status": "statusWork",
+      "tech": [
+        "CodeCycle",
+        "Mobile"
+      ],
+      "glyph": "GT",
+      "text": {
+        "pt": "Participação na equipe técnica do aplicativo de gestão de tarefas em campo.",
+        "en": "Technical-team involvement in a published field-task management app."
+      },
+      "details": {
+        "pt": "Experiência profissional na equipe técnica de um aplicativo publicado. Apresentação institucional limitada às informações autorizadas; sem código, telas ou detalhes internos.",
+        "en": "Professional experience on the technical team of a released application. Institutional presentation limited to authorized information, with no source code, screenshots or internal details."
+      },
+      "role": {
+        "pt": "Integrante da equipe técnica do aplicativo em 2026.",
+        "en": "Member of the application technical team in 2026."
+      },
+      "mediaKind": "photo"
+    },
+    {
+      "id": "shelf",
+      "title": {
+        "pt": "ShelfHive",
+        "en": "ShelfHive"
+      },
+      "category": "work",
+      "year": "2026",
+      "status": "statusWork",
+      "tech": [
+        "CodeCycle",
+        "Mobile"
+      ],
+      "glyph": "SH",
+      "text": {
+        "pt": "Participação técnica em aplicativo de gerenciamento de estoque da CodeCycle.",
+        "en": "Technical work on CodeCycle’s inventory-management app."
+      },
+      "details": {
+        "pt": "Experiência profissional na equipe técnica de um aplicativo publicado. Apresentação institucional limitada às informações autorizadas; sem código, telas ou detalhes internos.",
+        "en": "Professional experience on the technical team of a released application. Institutional presentation limited to authorized information, with no source code, screenshots or internal details."
+      },
+      "role": {
+        "pt": "Integrante da equipe técnica do aplicativo em 2026.",
+        "en": "Member of the application technical team in 2026."
+      },
+      "mediaKind": "photo"
+    },
+    {
+      "id": "fert",
+      "title": {
+        "pt": "TCC — Química",
+        "en": "Chemistry capstone"
+      },
+      "category": "chem",
+      "year": "2026",
+      "status": "statusDone",
+      "tech": [
+        "ASTM D1895",
+        "Laboratory",
+        "Density"
+      ],
+      "glyph": "ρ",
+      "text": {
+        "pt": "Estudo de densidade aparente de fertilizantes e validação de resultados.",
+        "en": "Study of apparent bulk density of fertilizers and validation of results."
+      },
+      "details": {
+        "pt": "TCC em equipe sobre densidade aparente sem compactação de ureia, superfosfato simples e cloreto de potássio granulado, pelo método ASTM D1895 descrito no relatório. Foram realizadas dez repetições por amostra após calibração volumétrica.",
+        "en": "Team capstone studying uncompacted bulk density of urea, single superphosphate and granular potassium chloride, using the ASTM D1895 method described in the report. Ten measurements per sample followed volumetric calibration."
+      },
+      "role": {
+        "pt": "Coautor do TCC com Caio Cesar Pereira da Silva e Ygor Rodrigues dos Santos. O relatório documenta o trabalho em equipe; não atribui individualmente cada procedimento.",
+        "en": "Capstone coauthor with Caio Cesar Pereira da Silva and Ygor Rodrigues dos Santos. The report documents team work without attributing each procedure individually."
+      },
+      "image": "chem-tcc.webp",
+      "media": [
+        [
+          "img",
+          "chem-tcc.webp"
+        ]
+      ],
+      "mediaKind": "photo",
+      "result": {
+        "pt": "Médias relatadas: ureia 748,26 g/L; superfosfato simples 1114,44 g/L; KCl granulado 1092,78 g/L. Valores extraídos do resumo do TCC fornecido, sem revalidação independente.",
+        "en": "Reported means: urea 748.26 g/L; single superphosphate 1114.44 g/L; granular KCl 1092.78 g/L. Values come from the supplied capstone abstract and were not independently revalidated."
+      }
+    },
+    {
+      "id": "chemplant",
+      "title": {
+        "pt": "Maquete — Ácido Sulfúrico",
+        "en": "Sulfuric acid scale model"
+      },
+      "category": "chem",
+      "year": "2026",
+      "status": "statusDone",
+      "tech": [
+        "Industrial chemistry",
+        "Modeling",
+        "Scale model"
+      ],
+      "glyph": "H₂",
+      "text": {
+        "pt": "Modelagem e montagem de maquete didática de processo industrial.",
+        "en": "Design and assembly of an educational industrial-process scale model."
+      },
+      "details": {
+        "pt": "Modelo didático do processo industrial de ácido sulfúrico: combustão, conversão, absorção, diluição, reciclo e expedição. Fotografias do conjunto documentam a modelagem e a montagem.",
+        "en": "Educational scale model of sulfuric acid production: combustion, conversion, absorption, dilution, recycling and shipping. Photos document the model design and assembly."
+      },
+      "role": {
+        "pt": "Modelagem e montagem da maquete.",
+        "en": "Scale-model design and assembly."
+      },
+      "image": "chem-plant.webp",
+      "media": [
+        [
+          "img",
+          "chem-plant.webp"
+        ],
+        [
+          "img",
+          "chem-plant-top.webp"
+        ]
+      ],
+      "mediaKind": "photo"
+    },
+    {
+      "id": "kas",
+      "title": {
+        "pt": "Kasasneva",
+        "en": "Kasasneva"
+      },
+      "category": "archive",
+      "year": "—",
+      "status": "statusArchive",
+      "tech": [
+        "Python",
+        "Kivy",
+        "SQLite"
+      ],
+      "glyph": "⌂",
+      "text": {
+        "pt": "Protótipo acadêmico de aplicativo para venda de imóveis.",
+        "en": "Academic real-estate listing app prototype."
+      },
+      "details": {
+        "pt": "Projeto universitário de Python/Kivy para venda de imóveis. A integridade de todos os fluxos de funcionamento ainda não foi confirmada.",
+        "en": "University Python/Kivy real estate assignment. Full functionality has not been verified."
+      },
+      "role": {
+        "pt": "Desenvolvimento do trabalho acadêmico.",
+        "en": "Development of the academic assignment."
+      },
+      "links": [
+        [
+          "code",
+          "https://github.com/NichollasFarias/Kasasneva"
+        ]
+      ],
+      "mediaKind": "photo"
+    },
+    {
+      "id": "studies",
+      "title": {
+        "pt": "Fundamentos & Experimentos",
+        "en": "Foundations & Experiments"
+      },
+      "category": "archive",
+      "year": "2019–2024",
+      "status": "statusArchive",
+      "tech": [
+        "C#",
+        "Python",
+        "AI"
+      ],
+      "glyph": "ƒx",
+      "text": {
+        "pt": "Acervo de exercícios de algoritmos, Fourier, Widrow-Hoff, Kivy e Machine Learning.",
+        "en": "Archive of exercises in algorithms, Fourier series, Widrow-Hoff, Kivy, and Machine Learning."
+      },
+      "details": {
+        "pt": "Coleção de exercícios do período de formação, agrupados como acervo de aprendizagem — não como produtos finalizados. Inclui matemática aplicada, interfaces, C#, Python e técnicas introdutórias de aprendizado de máquina.",
+        "en": "Coursework grouped as a learning archive rather than finished products. Includes applied math, interfaces, C#, Python, and introductory machine-learning techniques."
+      },
+      "role": {
+        "pt": "Estudos, exercícios e experimentos individuais.",
+        "en": "Individual coursework, exercises, and experiments."
+      },
+      "links": [
+        [
+          "code",
+          "https://github.com/NichollasFarias"
+        ]
+      ],
+      "mediaKind": "photo"
+    },
+    {
+      "id": "fourier",
+      "title": {
+        "pt": "Calculadora de Série de Fourier",
+        "en": "Fourier Series Calculator"
+      },
+      "category": "archive",
+      "year": "—",
+      "status": "statusArchive",
+      "tech": [
+        "C#",
+        "Mathematics"
+      ],
+      "text": {
+        "pt": "Exercício universitário de cálculo de séries de Fourier. Funcionamento relatado pelo autor, sem novas medições de precisão.",
+        "en": "University Fourier-series calculation exercise. Functionality reported by the author, with no new accuracy measurements."
+      },
+      "details": {
+        "pt": "Exercício universitário de cálculo de séries de Fourier. Funcionamento relatado pelo autor, sem novas medições de precisão.",
+        "en": "University Fourier-series calculation exercise. Functionality reported by the author, with no new accuracy measurements."
+      },
+      "role": {
+        "pt": "Desenvolvimento de exercícios durante a graduação.",
+        "en": "Coursework developed during the undergraduate program."
+      },
+      "links": [
+        [
+          "code",
+          "https://github.com/NichollasFarias/Calculadora-de-Serie-Fourier"
+        ]
+      ]
+    },
+    {
+      "id": "widrow",
+      "title": {
+        "pt": "Widrow–Hoff",
+        "en": "Widrow–Hoff"
+      },
+      "category": "archive",
+      "year": "—",
+      "status": "statusArchive",
+      "tech": [
+        "Algorithm",
+        "Mathematics"
+      ],
+      "text": {
+        "pt": "Estudo acadêmico do algoritmo Widrow–Hoff, preservado como exercício de aprendizagem.",
+        "en": "Academic study of the Widrow–Hoff algorithm, retained as a learning exercise."
+      },
+      "details": {
+        "pt": "Estudo acadêmico do algoritmo Widrow–Hoff, preservado como exercício de aprendizagem.",
+        "en": "Academic study of the Widrow–Hoff algorithm, retained as a learning exercise."
+      },
+      "role": {
+        "pt": "Desenvolvimento de exercícios durante a graduação.",
+        "en": "Coursework developed during the undergraduate program."
+      },
+      "links": [
+        [
+          "code",
+          "https://github.com/NichollasFarias/Algoritmo_WidrowHoff"
+        ]
+      ]
+    },
+    {
+      "id": "machine",
+      "title": {
+        "pt": "Machine Learning",
+        "en": "Machine Learning"
+      },
+      "category": "archive",
+      "year": "—",
+      "status": "statusArchive",
+      "tech": [
+        "Python",
+        "scikit-learn",
+        "pandas"
+      ],
+      "text": {
+        "pt": "Exercícios com KMeans, StandardScaler e visualização com matplotlib.",
+        "en": "Exercises using KMeans, StandardScaler and matplotlib visualization."
+      },
+      "details": {
+        "pt": "Exercícios com KMeans, StandardScaler e visualização com matplotlib.",
+        "en": "Exercises using KMeans, StandardScaler and matplotlib visualization."
+      },
+      "role": {
+        "pt": "Desenvolvimento de exercícios durante a graduação.",
+        "en": "Coursework developed during the undergraduate program."
+      },
+      "links": [
+        [
+          "code",
+          "https://github.com/NichollasFarias/MachineLearn"
+        ]
+      ]
+    },
+    {
+      "id": "python",
+      "title": {
+        "pt": "Trabalhos em Python",
+        "en": "Python coursework"
+      },
+      "category": "archive",
+      "year": "—",
+      "status": "statusArchive",
+      "tech": [
+        "Python"
+      ],
+      "text": {
+        "pt": "Coleção de trabalhos universitários de Python; apresentada como acervo acadêmico.",
+        "en": "Collection of university Python assignments, presented as an academic archive."
+      },
+      "details": {
+        "pt": "Coleção de trabalhos universitários de Python; apresentada como acervo acadêmico.",
+        "en": "Collection of university Python assignments, presented as an academic archive."
+      },
+      "role": {
+        "pt": "Desenvolvimento de exercícios durante a graduação.",
+        "en": "Coursework developed during the undergraduate program."
+      },
+      "links": [
+        [
+          "code",
+          "https://github.com/NichollasFarias/Projetos_em_Python_Unisanta"
+        ]
+      ]
+    },
+    {
+      "id": "kivy",
+      "title": {
+        "pt": "Interfaces em Kivy",
+        "en": "Kivy interfaces"
+      },
+      "category": "archive",
+      "year": "—",
+      "status": "statusArchive",
+      "tech": [
+        "Python",
+        "Kivy"
+      ],
+      "text": {
+        "pt": "Exercícios de aplicações e interfaces em Python/Kivy.",
+        "en": "Application and interface exercises in Python/Kivy."
+      },
+      "details": {
+        "pt": "Exercícios de aplicações e interfaces em Python/Kivy.",
+        "en": "Application and interface exercises in Python/Kivy."
+      },
+      "role": {
+        "pt": "Desenvolvimento de exercícios durante a graduação.",
+        "en": "Coursework developed during the undergraduate program."
+      },
+      "links": [
+        [
+          "code",
+          "https://github.com/NichollasFarias/Projetos_em_PythonKivy_Unisanta"
+        ]
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "id": "engineering",
+      "file": "certificate-engineering.webp",
+      "name": {
+        "pt": "Engenharia da Computação",
+        "en": "Computer Engineering"
+      },
+      "institution": "Universidade Santa Cecília · Unisanta",
+      "year": "2024",
+      "type": {
+        "pt": "Diploma de bacharelado",
+        "en": "Bachelor’s degree diploma"
+      },
+      "note": {
+        "pt": "Conclusão em 2024 · diploma emitido em 2025.",
+        "en": "Completed in 2024 · diploma issued in 2025."
+      }
+    },
+    {
+      "id": "games",
+      "file": "certificate-games.webp",
+      "name": {
+        "pt": "Programação de Jogos Digitais",
+        "en": "Digital Game Programming"
+      },
+      "institution": "ETEC Aristóteles Ferreira · Centro Paula Souza",
+      "year": "2019",
+      "type": {
+        "pt": "Diploma técnico",
+        "en": "Technical diploma"
+      },
+      "note": {
+        "pt": "Conclusão em 2019 · diploma emitido em 2021.",
+        "en": "Completed in 2019 · diploma issued in 2021."
+      }
+    },
+    {
+      "id": "chemistry",
+      "file": "certificate-chemistry.webp",
+      "name": {
+        "pt": "Técnico em Química",
+        "en": "Chemistry Technician"
+      },
+      "institution": "Instituto Tecnológico e Social Dom Bosco",
+      "year": "2026",
+      "type": {
+        "pt": "Diploma técnico",
+        "en": "Technical diploma"
+      },
+      "note": {
+        "pt": "Formação no Liceu Santista · instituição emissora conforme diploma.",
+        "en": "Studies at Liceu Santista · issuer as printed on the diploma."
+      }
+    },
+    {
+      "id": "cobric",
+      "file": "certificate-cobric.webp",
+      "name": {
+        "pt": "16º COBRIC",
+        "en": "16th COBRIC"
+      },
+      "institution": "Universidade Santa Cecília · Unisanta",
+      "year": "2024",
+      "type": {
+        "pt": "Apresentação de trabalho científico",
+        "en": "Research presentation"
+      },
+      "note": {
+        "pt": "Sistema Modular de Segurança para Ambiente com Microcontrolador.",
+        "en": "Microcontroller-based Modular Security System for Environments."
+      }
+    },
+    {
+      "id": "bigdata",
+      "file": "certificate-bigdata.webp",
+      "name": {
+        "pt": "Big Data & AI Brazil Experience",
+        "en": "Big Data & AI Brazil Experience"
+      },
+      "institution": "Comunidade BIG DATA BRAZIL",
+      "year": "2025",
+      "type": {
+        "pt": "Participação em evento",
+        "en": "Event participation"
+      },
+      "note": {
+        "pt": "22 de novembro de 2025 · participação, sem alegação de certificação técnica.",
+        "en": "November 22, 2025 · event participation, not a technical certification."
+      }
+    },
+    {
+      "id": "english",
+      "file": "certificate-english.webp",
+      "name": {
+        "pt": "Inglês · curso Proficiency",
+        "en": "English · Proficiency course"
+      },
+      "institution": "Wizard by Pearson · Santos",
+      "year": "2023",
+      "type": {
+        "pt": "Certificado de conclusão de curso",
+        "en": "Course completion certificate"
+      },
+      "note": {
+        "pt": "Formação complementar · inglês intermediário conforme perfil aprovado.",
+        "en": "Additional studies · intermediate English as stated in the approved profile."
+      }
+    }
+  ]
+}
