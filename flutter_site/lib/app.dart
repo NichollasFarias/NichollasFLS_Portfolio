@@ -90,7 +90,7 @@ class _PortfolioAppState extends State<PortfolioApp> {
       changeLanguage: language,
       child: Stack(
         children: [
-          child!,
+          if (!choose) child!,
           if (choose)
             Positioned.fill(
               child: ColoredBox(
