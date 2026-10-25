@@ -1,5 +1,6 @@
 import 'dart:ui' show PointerDeviceKind;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'app.dart';
 import 'components.dart';
 import 'content.dart';
@@ -14,6 +15,7 @@ class CertificateCarousel extends StatefulWidget {
 
 class _CertificateCarouselState extends State<CertificateCarousel> {
   PageController? controller;
+  final keyboardFocus = FocusNode(debugLabel: 'certificate-carousel');
   double fraction = 0;
   int index = 0;
   int perPage = 1;
@@ -41,6 +43,7 @@ class _CertificateCarouselState extends State<CertificateCarousel> {
   @override
   void dispose() {
     controller?.dispose();
+    keyboardFocus.dispose();
     super.dispose();
   }
 
@@ -67,19 +70,20 @@ class _CertificateCarouselState extends State<CertificateCarousel> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 205,
-              width: double.infinity,
-              color: const Color(0xFFE7E5E3),
-              padding: const EdgeInsets.all(12),
-              child: ProjectImage(
-                cert.file,
-                label: cert.text('name', s.lang),
-                fit: BoxFit.contain,
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                color: const Color(0xFFE7E5E3),
+                padding: const EdgeInsets.all(12),
+                child: ProjectImage(
+                  cert.file,
+                  label: cert.text('name', s.lang),
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(18),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -111,7 +115,7 @@ class _CertificateCarouselState extends State<CertificateCarousel> {
                   copy(cert.institution, size: 12),
                   gap(10),
                   copy(
-                    s.bi('VER PRÉVIA PÚBLICA  ↗', 'VIEW PUBLIC PREVIEW  ↗'),
+                    s.bi('AMPLIAR DOCUMENTO  ↗', 'ENLARGE DOCUMENT  ↗'),
                     size: 10,
                     color: ice,
                   ),
@@ -127,82 +131,91 @@ class _CertificateCarouselState extends State<CertificateCarousel> {
   @override
   Widget build(BuildContext context) {
     final s = PortfolioScope.of(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Expanded(
-              child: copy(
-                s.bi('ARRASTE PARA EXPLORAR', 'DRAG TO EXPLORE'),
-                size: 11,
-                color: ice,
+    return Focus(
+      key: const Key('certificate-keyboard'),
+      focusNode: keyboardFocus,
+      onKeyEvent: (_, event) {
+        if (event is KeyDownEvent &&
+            (event.logicalKey == LogicalKeyboardKey.arrowRight ||
+                event.logicalKey == LogicalKeyboardKey.arrowLeft)) {
+          move(event.logicalKey == LogicalKeyboardKey.arrowRight ? 1 : -1);
+          return KeyEventResult.handled;
+        }
+        return KeyEventResult.ignored;
+      },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: copy(
+                  s.bi('ARRASTE PARA EXPLORAR', 'DRAG TO EXPLORE'),
+                  size: 11,
+                  color: ice,
+                ),
               ),
-            ),
-            copy(
-              '${(index * perPage + 1).toString().padLeft(2, '0')}${perPage == 2 ? '–${((index + 1) * perPage).clamp(1, widget.certificates.length).toString().padLeft(2, '0')}' : ''} / ${widget.certificates.length.toString().padLeft(2, '0')}',
-              size: 12,
-            ),
-            const SizedBox(width: 12),
-            IconButton(
-              key: const Key('certificate-previous'),
-              tooltip: s.bi('Certificado anterior', 'Previous certificate'),
-              onPressed: index == 0 ? null : () => move(-1),
-              icon: const Icon(Icons.west),
-            ),
-            IconButton(
-              key: const Key('certificate-next'),
-              tooltip: s.bi('Próximo certificado', 'Next certificate'),
-              onPressed: index == pages - 1 ? null : () => move(1),
-              icon: const Icon(Icons.east),
-            ),
-          ],
-        ),
-        gap(16),
-        SizedBox(
-          height: MediaQuery.textScalerOf(context).scale(1) > 1.3 ? 570 : 490,
-          child: ScrollConfiguration(
-            behavior: const MaterialScrollBehavior().copyWith(
-              dragDevices: {
-                PointerDeviceKind.touch,
-                PointerDeviceKind.mouse,
-                PointerDeviceKind.stylus,
-                PointerDeviceKind.trackpad,
-              },
-            ),
-            child: PageView.builder(
-              key: const Key('certificate-pager'),
-              controller: controller,
-              padEnds: true,
-              allowImplicitScrolling: true,
-              itemCount: pages,
-              onPageChanged: (v) => setState(() => index = v),
-              itemBuilder: (_, page) => Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  for (var col = 0; col < perPage; col++)
-                    Expanded(
-                      child: page * perPage + col < widget.certificates.length
-                          ? certificateCard(
-                              widget.certificates[page * perPage + col],
-                              s,
-                            )
-                          : const SizedBox(),
-                    ),
-                ],
+              copy(
+                '${(index * perPage + 1).toString().padLeft(2, '0')}${perPage == 2 ? '–${((index + 1) * perPage).clamp(1, widget.certificates.length).toString().padLeft(2, '0')}' : ''} / ${widget.certificates.length.toString().padLeft(2, '0')}',
+                size: 12,
+              ),
+              const SizedBox(width: 12),
+              IconButton(
+                key: const Key('certificate-previous'),
+                tooltip: s.bi('Certificado anterior', 'Previous certificate'),
+                onPressed: index == 0 ? null : () => move(-1),
+                icon: const Icon(Icons.west),
+              ),
+              IconButton(
+                key: const Key('certificate-next'),
+                tooltip: s.bi('Próximo certificado', 'Next certificate'),
+                onPressed: index == pages - 1 ? null : () => move(1),
+                icon: const Icon(Icons.east),
+              ),
+            ],
+          ),
+          gap(16),
+          SizedBox(
+            height: MediaQuery.textScalerOf(context).scale(1) > 1.3
+                ? 580
+                : MediaQuery.sizeOf(context).width > 1000
+                ? 510
+                : 420,
+            child: ScrollConfiguration(
+              behavior: const MaterialScrollBehavior().copyWith(
+                dragDevices: {
+                  PointerDeviceKind.touch,
+                  PointerDeviceKind.mouse,
+                  PointerDeviceKind.stylus,
+                  PointerDeviceKind.trackpad,
+                },
+              ),
+              child: PageView.builder(
+                key: const Key('certificate-pager'),
+                controller: controller,
+                padEnds: true,
+                allowImplicitScrolling: true,
+                itemCount: pages,
+                onPageChanged: (v) => setState(() => index = v),
+                itemBuilder: (_, page) => Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    for (var col = 0; col < perPage; col++)
+                      Expanded(
+                        child: page * perPage + col < widget.certificates.length
+                            ? certificateCard(
+                                widget.certificates[page * perPage + col],
+                                s,
+                              )
+                            : const SizedBox(),
+                      ),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-        gap(16),
-        copy(
-          s.bi(
-            'Prévias dos documentos reais. Dados pessoais, identificadores e assinaturas foram ocultados; os originais foram preservados.',
-            'Previews of real documents. Personal data, identifiers and signatures have been hidden; originals are preserved.',
-          ),
-          size: 12,
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -259,18 +272,7 @@ Future<void> showCertificate(BuildContext context, Certificate cert) async {
               Padding(
                 padding: const EdgeInsets.all(18),
                 child: Column(
-                  children: [
-                    copy(cert.text('note', s.lang), size: 12),
-                    gap(6),
-                    copy(
-                      s.bi(
-                        'PRÉVIA PÚBLICA · DADOS PRIVADOS OCULTADOS',
-                        'PUBLIC PREVIEW · PRIVATE DATA HIDDEN',
-                      ),
-                      size: 10,
-                      color: ice,
-                    ),
-                  ],
+                  children: [copy(cert.text('note', s.lang), size: 12)],
                 ),
               ),
             ],

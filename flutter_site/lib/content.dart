@@ -5,6 +5,9 @@ class Project {
   final Map<String, dynamic> data;
   const Project(this.data);
   String get id => data['id'] as String;
+  List<String> get collections =>
+      List<String>.from(data['collections'] as List? ?? []);
+  bool get belongsToForge => collections.contains('forge');
   String get category => data['category'] as String;
   String get status => data['status'] as String;
   String get year => data['year'] as String;
@@ -69,7 +72,7 @@ class PortfolioContent {
           (p) =>
               (category == 'all' ||
                   p.category == category ||
-                  (p.data['collections'] as List? ?? []).contains(category)) &&
+                  p.collections.contains(category)) &&
               (status == 'all' || p.status == status) &&
               (technology == 'all' || p.tech.contains(technology)) &&
               ('${p.text('title', lang)} ${p.text('text', lang)} ${p.tech.join(' ')}')

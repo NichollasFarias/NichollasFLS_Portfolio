@@ -15,15 +15,15 @@ extension _ProfilePages on _SitePageState {
           children: [
             copy(
               bi(
-                'Minha relação com a tecnologia começou na infância: experimentos químicos simples, aparelhos desmontados e a vontade de descobrir como tudo funcionava. Robótica e mecatrônica sempre fizeram parte dessa curiosidade.',
-                'My relationship with technology began in childhood: simple chemistry experiments, taking electronics apart and wanting to understand how everything worked. Robotics and mechatronics have always been part of that curiosity.',
+                'Desde criança, sempre fui fascinado por ciência e computação. Fazia experimentos químicos simples e desmontava aparelhos para descobrir como funcionavam. Essa curiosidade também me aproximou da robótica e da mecatrônica.',
+                'I have been fascinated by science and computing since childhood. I carried out simple chemistry experiments and took electronics apart to understand how they worked. That curiosity also drew me to robotics and mechatronics.',
               ),
             ),
             gap(),
             copy(
               bi(
-                'No ensino médio, entrei na ETEC para estudar Jogos Digitais. Depois realizei o objetivo de cursar Engenharia da Computação, aproximando programação, eletrônica e automação. A formação técnica em Química ampliou meu interesse por ciência e processos.',
-                'During high school, I enrolled at ETEC to study Digital Games. I then pursued my goal of studying Computer Engineering, bringing programming, electronics and automation together. Technical training in Chemistry expanded my interest in science and processes.',
+                'No ensino médio, entrei na ETEC para estudar Jogos Digitais. Encontrei na Engenharia da Computação a oportunidade de conectar programação, eletrônica e automação. A formação técnica em Química ampliou meu interesse por ciência e processos.',
+                'During high school, I enrolled at ETEC to study Digital Games. Computer Engineering gave me the opportunity to connect programming, electronics and automation. Technical training in Chemistry expanded my interest in science and processes.',
               ),
             ),
             gap(),
@@ -231,13 +231,6 @@ extension _ProfilePages on _SitePageState {
       projectGrid(
         s.content.projects.where((p) => p.category == 'work').toList(),
       ),
-      gap(36),
-      copy(
-        bi(
-          'As descrições respeitam o escopo público autorizado. GlobalTask e ShelfHive aparecem com participação técnica; não são divulgados código ou informações internas.',
-          'Descriptions respect the authorized public scope. GlobalTask and ShelfHive are presented in terms of technical-team participation; no code or internal information is disclosed.',
-        ),
-      ),
       gap(60),
     ],
   );
@@ -286,14 +279,6 @@ extension _ProfilePages on _SitePageState {
           '16º COBRIC · Apresentação de artigo (2024).\nBig Data & AI Brazil Experience · Participação em evento (22/11/2025).\nPortuguês nativo e inglês intermediário. Formação em inglês pela Wizard.',
           '16th COBRIC · Research presentation (2024).\nBig Data & AI Brazil Experience · Event participation (November 22, 2025).\nNative Portuguese and intermediate English. English studies at Wizard.',
         ),
-      ),
-      gap(20),
-      copy(
-        bi(
-          'As prévias mostram documentos reais com dados privados ocultados.',
-          'Previews show real documents with private information hidden.',
-        ),
-        size: 12,
       ),
     ],
   );
@@ -395,11 +380,7 @@ extension _ProfilePages on _SitePageState {
       gap(64),
       heading(bi('Projetos da forja.', 'Projects from the forge.'), size: 36),
       gap(28),
-      projectGrid(
-        s.content.projects
-            .where((p) => ['forge', 'lembre', 'quimera'].contains(p.id))
-            .toList(),
-      ),
+      projectGrid(s.content.projects.where((p) => p.belongsToForge).toList()),
     ],
   );
   Widget service(

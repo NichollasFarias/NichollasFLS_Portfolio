@@ -65,7 +65,7 @@ extension _ProjectPages on _SitePageState {
                 children: [
                   Expanded(
                     child: copy(
-                      categoryLabel(p.category).toUpperCase(),
+                      projectCategoryLabel(p).toUpperCase(),
                       size: 10,
                       color: ice,
                     ),
@@ -74,24 +74,34 @@ extension _ProjectPages on _SitePageState {
                 ],
               ),
               gap(12),
-              Text(
-                p.text('title', s.lang),
-                style: const TextStyle(
-                  fontSize: 23,
-                  height: 1.2,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: p.image != null ? 56 : 0,
+                ),
+                child: Text(
+                  p.text('title', s.lang),
+                  style: const TextStyle(
+                    fontSize: 23,
+                    height: 1.2,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               gap(12),
-              Text(
-                p.text('text', s.lang),
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  fontSize: 14,
-                  height: 1.6,
-                  color: silver,
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                  minHeight: p.image != null ? 68 : 0,
+                ),
+                child: Text(
+                  p.text('text', s.lang),
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    height: 1.6,
+                    color: silver,
+                  ),
                 ),
               ),
               gap(18),
@@ -129,10 +139,14 @@ extension _ProjectPages on _SitePageState {
               'Mobile': 'Mobile',
             }[value] ??
             value;
+  String projectCategoryLabel(Project p) => p.belongsToForge
+      ? (p.category == 'chem'
+            ? 'Lancelot Forge · ${categoryLabel(p.category)}'
+            : 'Lancelot Forge')
+      : categoryLabel(p.category);
   String categoryLabel(String c) => switch (c) {
-    'apps' => bi('Autorais', 'Independent'),
+    'apps' => 'Lancelot Forge',
     'eng' => bi('Engenharia da Computação', 'Computer Engineering'),
-    'personal' => bi('Projetos pessoais', 'Personal projects'),
     'forge' => 'Lancelot Forge',
     'games' => bi('Jogos digitais', 'Digital games'),
     'chem' => bi('Química', 'Chemistry'),
@@ -145,38 +159,28 @@ extension _ProjectPages on _SitePageState {
     children: [
       sectionHeader(
         bi('PORTFÓLIO / EXPLORAR', 'PORTFOLIO / EXPLORE'),
-        bi('Projetos com contexto.', 'Projects with context.'),
+        bi('Explore meus projetos.', 'Explore my projects.'),
       ),
       gap(),
       copy(
         bi(
-          'Aplicativos, circuitos, jogos e ciência. Explore a proposta, minha participação e as evidências de cada trabalho.',
-          'Applications, circuits, games and science. Explore the purpose, my contribution and the evidence behind each project.',
+          'Aplicativos, circuitos, jogos e ciência. Conheça as ideias, tecnologias e soluções por trás de cada trabalho.',
+          'Applications, circuits, games and science. Discover the ideas, technologies and solutions behind each project.',
         ),
       ),
       gap(30),
       Wrap(
         spacing: 8,
         runSpacing: 10,
-        children:
-            [
-                  'all',
-                  'eng',
-                  'games',
-                  'chem',
-                  'work',
-                  'personal',
-                  'forge',
-                  'archive',
-                ]
-                .map(
-                  (c) => ChoiceChip(
-                    label: Text(categoryLabel(c)),
-                    selected: category == c,
-                    onSelected: (_) => update(() => category = c),
-                  ),
-                )
-                .toList(),
+        children: ['all', 'eng', 'games', 'chem', 'work', 'forge', 'archive']
+            .map(
+              (c) => ChoiceChip(
+                label: Text(categoryLabel(c)),
+                selected: category == c,
+                onSelected: (_) => update(() => category = c),
+              ),
+            )
+            .toList(),
       ),
       gap(24),
       LayoutBuilder(
@@ -270,7 +274,10 @@ extension _ProjectPages on _SitePageState {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              copy('${result.length} ${bi('projetos', 'projects')}', size: 12),
+              copy(
+                '${result.length} ${result.length == 1 ? bi('projeto', 'project') : bi('projetos', 'projects')}',
+                size: 12,
+              ),
               gap(20),
               if (result.isEmpty)
                 Padding(
@@ -287,32 +294,33 @@ extension _ProjectPages on _SitePageState {
           );
         },
       ),
-      gap(48),
-      copy(
-        bi(
-          'Projetos acadêmicos são apresentados em seu escopo real. Produtos em desenvolvimento e aplicativos descontinuados estão identificados.',
-          'Academic projects are presented within their actual scope. Products in development and discontinued applications are clearly identified.',
-        ),
-        size: 13,
-      ),
     ],
   );
   Widget projectDetails(Project p, BuildContext modalContext) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        eyebrow('${categoryLabel(p.category)} / ${p.year}'),
-        heading(
-          p.text('title', s.lang),
-          size: MediaQuery.sizeOf(context).width < 600 ? 39 : 60,
+        eyebrow('${projectCategoryLabel(p)} / ${p.year}'),
+        Padding(
+          key: const Key('project-title'),
+          padding: const EdgeInsets.only(top: 4, bottom: 4),
+          child: Text(
+            p.text('title', s.lang),
+            style: TextStyle(
+              fontSize: MediaQuery.sizeOf(context).width < 600 ? 34 : 52,
+              height: 1.2,
+              fontWeight: FontWeight.w700,
+              color: Colors.white,
+            ),
+          ),
         ),
         gap(24),
         copy(p.text('text', s.lang), size: 20),
         gap(22),
         tags([s.t(p.status), ...p.tech.map(techLabel)]),
-        gap(38),
+        gap(28),
         if (p.image != null)
-          split(
+          projectSplit(
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -328,7 +336,7 @@ extension _ProjectPages on _SitePageState {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxHeight: 500),
+                      constraints: const BoxConstraints(maxHeight: 420),
                       child: ProjectImage(
                         p.image!,
                         label: p.text('title', s.lang),
@@ -350,7 +358,7 @@ extension _ProjectPages on _SitePageState {
         gap(40),
         if (p.id == 'safetrack') ...safeTrackCase(),
         if (p.text('result', s.lang).isNotEmpty) ...[
-          eyebrow(bi('RESULTADOS DOCUMENTADOS', 'DOCUMENTED RESULTS')),
+          eyebrow(bi('RESULTADOS', 'RESULTS')),
           copy(p.text('result', s.lang)),
           gap(40),
         ],
@@ -360,7 +368,7 @@ extension _ProjectPages on _SitePageState {
           ),
           LayoutBuilder(
             builder: (_, c) {
-              final cols = c.maxWidth < 600 ? 1 : 3;
+              final cols = c.maxWidth < 600 ? 1 : p.media.length.clamp(1, 3);
               final w = (c.maxWidth - 16 * (cols - 1)) / cols;
               return Wrap(
                 spacing: 16,
@@ -433,39 +441,63 @@ extension _ProjectPages on _SitePageState {
   Widget projectOverview(Project p) => Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      eyebrow(
-        bi(
-          'CONTEXTO, OBJETIVO E FUNCIONAMENTO',
-          'CONTEXT, OBJECTIVE & FUNCTIONALITY',
-        ),
-      ),
+      eyebrow(bi('SOBRE O PROJETO', 'ABOUT THE PROJECT')),
       copy(p.text('details', s.lang)),
-      gap(28),
-      eyebrow(bi('MINHA PARTICIPAÇÃO', 'MY CONTRIBUTION')),
-      copy(p.text('role', s.lang)),
+      if (p.text('features', s.lang).isNotEmpty) ...[
+        gap(24),
+        eyebrow(bi('FUNCIONALIDADES', 'FEATURES')),
+        ...p
+            .text('features', s.lang)
+            .split('\n')
+            .map(
+              (f) => Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(top: 5),
+                      child: Icon(Icons.diamond_outlined, color: ice, size: 13),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(child: copy(f, size: 14)),
+                  ],
+                ),
+              ),
+            ),
+      ],
+      if (p.text('credits', s.lang).isNotEmpty) ...[
+        gap(20),
+        copy(p.text('credits', s.lang), size: 12),
+      ],
     ],
   );
+  Widget projectSplit(
+    Widget image,
+    Widget overview, {
+    int left = 6,
+    int right = 5,
+  }) => LayoutBuilder(
+    builder: (_, c) => c.maxWidth < 760
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [image, gap(28), overview],
+          )
+        : Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(flex: left, child: image),
+              const SizedBox(width: 36),
+              Expanded(flex: right, child: overview),
+            ],
+          ),
+  );
   String mediaLabel(Project p) => switch (p.data['mediaKind']) {
-    'mockup' => bi(
-      'Composição promocional fornecida pelo autor. O visual não comprova todas as funcionalidades ilustradas.',
-      'Promotional composition supplied by the author. The visual does not verify every illustrated feature.',
-    ),
-    'demo' => bi(
-      'Demonstração fornecida pelo autor · somente dados fictícios.',
-      'Author-supplied demonstration · fictional data only.',
-    ),
-    'poster' => bi(
-      'Material de apresentação acadêmica do protótipo em grupo.',
-      'Academic presentation material for the team prototype.',
-    ),
-    'gameplay' => bi(
-      'Captura e trecho do gameplay original · sem áudio.',
-      'Capture and excerpt from original gameplay · no audio.',
-    ),
-    _ => bi(
-      'Fotografia / captura real do projeto.',
-      'Actual project photograph / screenshot.',
-    ),
+    'mockup' => bi('Mockup de apresentação', 'Presentation mockup'),
+    'demo' => bi('Interface de demonstração', 'Demo interface'),
+    'poster' => bi('Apresentação do projeto', 'Project presentation'),
+    'gameplay' => bi('Gameplay', 'Gameplay'),
+    _ => bi('Visão geral', 'Overview'),
   };
   List<Widget> safeTrackCase() => [
     eyebrow(bi('PROBLEMA + SOLUÇÃO', 'PROBLEM + SOLUTION')),
@@ -507,8 +539,8 @@ extension _ProjectPages on _SitePageState {
     gap(32),
     copy(
       bi(
-        'O aplicativo Expo acompanha sensores e estoque. A central SafeTrack Center em C# reúne a gestão de estoque e funcionários. As demonstrações registram o protótipo; não representam validação industrial ou implantação comercial.',
-        'The Expo app tracks sensors and inventory. The C# SafeTrack Center desktop hub brings inventory and employee management together. Demonstrations document a prototype rather than industrial validation or commercial deployment.',
+        'O aplicativo Expo acompanha sensores e estoque. A central SafeTrack Center em C# reúne a gestão de estoque e funcionários. ',
+        'The Expo app tracks sensors and inventory. The C# SafeTrack Center desktop hub brings inventory and employee management together. ',
       ),
     ),
     gap(40),

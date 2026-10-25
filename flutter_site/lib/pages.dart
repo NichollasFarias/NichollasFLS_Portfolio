@@ -231,8 +231,11 @@ class _SitePageState extends State<SitePage> {
                       child: SingleChildScrollView(
                         key: const Key('project-detail-scroll'),
                         controller: detailController,
-                        padding: EdgeInsets.all(
-                          MediaQuery.sizeOf(ctx).width < 600 ? 20 : 44,
+                        padding: EdgeInsets.fromLTRB(
+                          MediaQuery.sizeOf(ctx).width < 600 ? 20 : 36,
+                          28,
+                          MediaQuery.sizeOf(ctx).width < 600 ? 20 : 36,
+                          24,
                         ),
                         child: projectDetails(p, dialogContext),
                       ),
@@ -318,35 +321,30 @@ class _SitePageState extends State<SitePage> {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(
-                width: 34,
-                height: 38,
-                child: CustomPaint(
-                  painter: HeraldicFrame(),
-                  child: const Center(
-                    child: Text(
-                      'N',
-                      style: TextStyle(
-                        color: ice,
-                        fontSize: 22,
-                        fontWeight: FontWeight.w700,
-                      ),
+              Image.asset(
+                'assets/media/forge-symbol.png',
+                key: const Key('official-logo'),
+                width: width < 600 ? 38 : 46,
+                height: 52,
+                fit: BoxFit.contain,
+                semanticLabel: 'Lancelot Forge',
+              ),
+              const SizedBox(width: 10),
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'NICHOLLAS\nF. L. SANTOS',
+                    style: TextStyle(
+                      fontSize: width < 600 ? 9 : 10,
+                      height: 1.4,
+                      letterSpacing: 1.1,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
               ),
-              if (width > 430) ...[
-                const SizedBox(width: 12),
-                const Text(
-                  'NICHOLLAS\nF. L. SANTOS',
-                  style: TextStyle(
-                    fontSize: 10,
-                    height: 1.4,
-                    letterSpacing: 1.6,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
             ],
           ),
         ),
@@ -504,8 +502,8 @@ class _SitePageState extends State<SitePage> {
           copy('N.  © 2026 NICHOLLAS F. L. SANTOS', size: 11),
           copy(
             bi(
-              'v1.1.0 · SOFTWARE / ENGENHARIA',
-              'v1.1.0 · SOFTWARE / ENGINEERING',
+              'v1.1.1 · SOFTWARE / ENGENHARIA',
+              'v1.1.1 · SOFTWARE / ENGINEERING',
             ),
             size: 10,
             color: ice,

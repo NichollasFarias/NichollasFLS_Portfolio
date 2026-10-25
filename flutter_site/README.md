@@ -1,4 +1,4 @@
-# Nichollas F. L. Santos — Flutter Web v1.1.0
+# Nichollas F. L. Santos — Flutter Web v1.1.1
 
 Evolução da v1.0.0 em Flutter/Dart. Uma página contínua: Hero, Sobre e linha do tempo, destaques, catálogo de 22 projetos, CodeCycle, formação e certificados, Lancelot Forge, contato e rodapé.
 
@@ -35,9 +35,9 @@ O build estático precisa ser servido por HTTP. A entrega contém um inicializad
 
 ## Conteúdo e certificados
 
-assets/content.json mantém os 22 projetos e suas fichas PT/EN. collections permite múltiplos filtros: personal e forge, sem duplicar projetos no catálogo. Preserve o estágio real e a atribuição da participação.
+assets/content.json mantém os 22 projetos e suas fichas PT/EN. A coleção forge reúne Lembre & Pague, 3D Print, Quimera, NeuroLaudo e Traverna, sem duplicar objetos. Quimera também aparece no tema Química. Créditos de equipe são discretos e separados da descrição do produto.
 
-certificates contém metadados traduzidos, instituição, ano e nome de uma prévia WebP pública. Não adicione PDFs ou fotografias brutas de documentos. As seis prévias fornecidas foram rasterizadas/achatadas com identificação pessoal, nascimento, códigos de validação, números de documentos e assinaturas ocultados conforme aplicável. Os originais ficam fora do código e do build.
+certificates contém metadados traduzidos, instituição, ano e nome de uma prévia WebP pública. Não adicione PDFs ou fotografias brutas de documentos. As seis prévias fornecidas foram rasterizadas/achatadas com identificação pessoal, nascimento, códigos de validação, números de documentos e campos privados ocultados conforme aplicável. Os originais ficam fora do código e do build.
 
 O ano principal é a conclusão/participação. A legenda diferencia emissão: Engenharia concluída em 2024, diploma de 2025; Jogos concluído em 2019, diploma de 2021. A instituição emissora de Química foi conferida no documento. O comprovante Big Data & AI representa participação em evento, sem alegação de certificação técnica. O curso Wizard não altera o nível aprovado de inglês intermediário.
 
@@ -51,8 +51,8 @@ Sem loop de partículas ou animações decorativas permanentes. Reveal, scroll p
 
 URL: https://nichollasfarias.github.io/NichollasFLS_Portfolio/
 
-Base: /NichollasFLS_Portfolio/. Código na branch flutter-v1.1.0; distribuição na pages-flutter-v1.1.0. A versão anterior permanece em flutter-v1.0.0 e pages-flutter-v1.0.0. O Pages usa publicação legacy a partir da raiz da branch de distribuição, com .nojekyll. Somente o build estático é publicado.
+Base: /NichollasFLS_Portfolio/. Código na branch flutter-v1.1.1; distribuição na pages-flutter-v1.1.1. A versão anterior permanece em flutter-v1.1.0 e pages-flutter-v1.1.0; a v1.0.0 também foi preservada. O Pages usa publicação legacy a partir da raiz da branch de distribuição, com .nojekyll. Somente o build estático é publicado.
 
-O workflow preparado é manual e exige configuração Pages para GitHub Actions antes de usá-lo como alternativa. O deploy desta entrega utiliza o build validado localmente. Para reverter, selecione pages-flutter-v1.0.0 e /(root) em Settings > Pages, salve e aguarde o build, sem force-push.
+O workflow preparado é manual e exige configuração Pages para GitHub Actions antes de usá-lo como alternativa. O deploy desta entrega utiliza o build validado localmente. Para reverter, selecione pages-flutter-v1.1.0 e /(root) em Settings > Pages, salve e aguarde o build, sem force-push.
 
-Ao publicar outra compilação, altere o token de release em web/index.html e web/flutter_bootstrap.js para evitar reuso do entrypoint pelo cache. O token desta entrega é 1.1.0-r1.
+Ao publicar outra compilação, altere o token de release em web/index.html e web/flutter_bootstrap.js para evitar reuso do entrypoint pelo cache. O token desta entrega é 1.1.1-r1.
