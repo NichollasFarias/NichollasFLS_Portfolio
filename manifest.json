@@ -1,0 +1,35 @@
+{
+  "name": "Nichollas F. L. Santos \u2014 Portfolio",
+  "short_name": "Nichollas",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#090812",
+  "theme_color": "#090812",
+  "description": "Software, engenharia e projetos autorais.",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/Icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/Icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/Icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
