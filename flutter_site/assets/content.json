@@ -356,7 +356,11 @@
           "lembre-2.webp"
         ]
       ],
-      "mediaKind": "mockup"
+      "mediaKind": "mockup",
+      "collections": [
+        "personal",
+        "forge"
+      ]
     },
     {
       "id": "forge",
@@ -392,7 +396,11 @@
           "forge-app.webp"
         ]
       ],
-      "mediaKind": "mockup"
+      "mediaKind": "mockup",
+      "collections": [
+        "personal",
+        "forge"
+      ]
     },
     {
       "id": "quimera",
@@ -432,7 +440,11 @@
           "quimera-overview.webp"
         ]
       ],
-      "mediaKind": "mockup"
+      "mediaKind": "mockup",
+      "collections": [
+        "personal",
+        "forge"
+      ]
     },
     {
       "id": "hunting",
@@ -587,7 +599,10 @@
           "traverna.webp"
         ]
       ],
-      "mediaKind": "mockup"
+      "mediaKind": "mockup",
+      "collections": [
+        "personal"
+      ]
     },
     {
       "id": "neuro",
@@ -631,7 +646,10 @@
           "neuro-gallery.webp"
         ]
       ],
-      "mediaKind": "demo"
+      "mediaKind": "demo",
+      "collections": [
+        "personal"
+      ]
     },
     {
       "id": "cof",
@@ -1038,6 +1056,116 @@
           "https://github.com/NichollasFarias/Projetos_em_PythonKivy_Unisanta"
         ]
       ]
+    }
+  ],
+  "certificates": [
+    {
+      "id": "engineering",
+      "file": "certificate-engineering.webp",
+      "name": {
+        "pt": "Engenharia da Computação",
+        "en": "Computer Engineering"
+      },
+      "institution": "Universidade Santa Cecília · Unisanta",
+      "year": "2024",
+      "type": {
+        "pt": "Diploma de bacharelado",
+        "en": "Bachelor’s degree diploma"
+      },
+      "note": {
+        "pt": "Conclusão em 2024 · diploma emitido em 2025.",
+        "en": "Completed in 2024 · diploma issued in 2025."
+      }
+    },
+    {
+      "id": "games",
+      "file": "certificate-games.webp",
+      "name": {
+        "pt": "Programação de Jogos Digitais",
+        "en": "Digital Game Programming"
+      },
+      "institution": "ETEC Aristóteles Ferreira · Centro Paula Souza",
+      "year": "2019",
+      "type": {
+        "pt": "Diploma técnico",
+        "en": "Technical diploma"
+      },
+      "note": {
+        "pt": "Conclusão em 2019 · diploma emitido em 2021.",
+        "en": "Completed in 2019 · diploma issued in 2021."
+      }
+    },
+    {
+      "id": "chemistry",
+      "file": "certificate-chemistry.webp",
+      "name": {
+        "pt": "Técnico em Química",
+        "en": "Chemistry Technician"
+      },
+      "institution": "Instituto Tecnológico e Social Dom Bosco",
+      "year": "2026",
+      "type": {
+        "pt": "Diploma técnico",
+        "en": "Technical diploma"
+      },
+      "note": {
+        "pt": "Formação no Liceu Santista · instituição emissora conforme diploma.",
+        "en": "Studies at Liceu Santista · issuer as printed on the diploma."
+      }
+    },
+    {
+      "id": "cobric",
+      "file": "certificate-cobric.webp",
+      "name": {
+        "pt": "16º COBRIC",
+        "en": "16th COBRIC"
+      },
+      "institution": "Universidade Santa Cecília · Unisanta",
+      "year": "2024",
+      "type": {
+        "pt": "Apresentação de trabalho científico",
+        "en": "Research presentation"
+      },
+      "note": {
+        "pt": "Sistema Modular de Segurança para Ambiente com Microcontrolador.",
+        "en": "Microcontroller-based Modular Security System for Environments."
+      }
+    },
+    {
+      "id": "bigdata",
+      "file": "certificate-bigdata.webp",
+      "name": {
+        "pt": "Big Data & AI Brazil Experience",
+        "en": "Big Data & AI Brazil Experience"
+      },
+      "institution": "Comunidade BIG DATA BRAZIL",
+      "year": "2025",
+      "type": {
+        "pt": "Participação em evento",
+        "en": "Event participation"
+      },
+      "note": {
+        "pt": "22 de novembro de 2025 · participação, sem alegação de certificação técnica.",
+        "en": "November 22, 2025 · event participation, not a technical certification."
+      }
+    },
+    {
+      "id": "english",
+      "file": "certificate-english.webp",
+      "name": {
+        "pt": "Inglês · curso Proficiency",
+        "en": "English · Proficiency course"
+      },
+      "institution": "Wizard by Pearson · Santos",
+      "year": "2023",
+      "type": {
+        "pt": "Certificado de conclusão de curso",
+        "en": "Course completion certificate"
+      },
+      "note": {
+        "pt": "Formação complementar · inglês intermediário conforme perfil aprovado.",
+        "en": "Additional studies · intermediate English as stated in the approved profile."
+      }
     }
   ]
 }

@@ -155,6 +155,12 @@ class _PortfolioAppState extends State<PortfolioApp> {
         ],
       ),
     ),
+    onGenerateInitialRoutes: (initial) => [
+      MaterialPageRoute<void>(
+        settings: const RouteSettings(name: '/'),
+        builder: (_) => SitePage(path: initial),
+      ),
+    ],
     onGenerateRoute: (settings) => MaterialPageRoute<void>(
       settings: settings,
       builder: (_) => SitePage(path: settings.name ?? '/'),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
+import 'app.dart';
 
 class ProjectImage extends StatelessWidget {
   final String file;
@@ -33,12 +34,30 @@ Future<void> openGallery(
   List<List<String>> media,
   int index,
   String label,
-  String close,
-) => showDialog<void>(
-  context: context,
-  builder: (_) =>
-      MediaGallery(media: media, initial: index, label: label, close: close),
-);
+  String close, {
+  ScrollController? ownerScroll,
+}) async {
+  final previousOffset = ownerScroll != null && ownerScroll.hasClients
+      ? ownerScroll.offset
+      : null;
+  await showDialog<void>(
+    context: context,
+    animationStyle: MediaQuery.disableAnimationsOf(context)
+        ? AnimationStyle.noAnimation
+        : null,
+    builder: (_) =>
+        MediaGallery(media: media, initial: index, label: label, close: close),
+  );
+  if (context.mounted && ownerScroll != null && previousOffset != null) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (context.mounted && ownerScroll.hasClients) {
+        ownerScroll.jumpTo(
+          previousOffset.clamp(0, ownerScroll.position.maxScrollExtent),
+        );
+      }
+    });
+  }
+}
 
 class MediaGallery extends StatefulWidget {
   final List<List<String>> media;
@@ -94,23 +113,31 @@ class _MediaGalleryState extends State<MediaGallery> {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(8),
-                  child: widget.media[index][0] == 'video'
-                      ? SilentVideo(
-                          widget.media[index][1],
-                          key: ValueKey(index),
-                          label: widget.label,
-                        )
-                      : InteractiveViewer(
-                          minScale: 1,
-                          maxScale: 4,
-                          child: Center(
-                            child: ProjectImage(
+                  child: AnimatedSwitcher(
+                    duration: MediaQuery.disableAnimationsOf(context)
+                        ? Duration.zero
+                        : const Duration(milliseconds: 180),
+                    child: KeyedSubtree(
+                      key: ValueKey(index),
+                      child: widget.media[index][0] == 'video'
+                          ? SilentVideo(
                               widget.media[index][1],
+                              key: ValueKey(index),
                               label: widget.label,
-                              fit: BoxFit.contain,
+                            )
+                          : InteractiveViewer(
+                              minScale: 1,
+                              maxScale: 4,
+                              child: Center(
+                                child: ProjectImage(
+                                  widget.media[index][1],
+                                  label: widget.label,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
+                    ),
+                  ),
                 ),
               ),
               Row(
@@ -197,8 +224,8 @@ class _SilentVideoState extends State<SilentVideo> {
         ),
         IconButton(
           tooltip: controller.value.isPlaying
-              ? 'Pause / Pausar'
-              : 'Play / Reproduzir',
+              ? PortfolioScope.of(context).bi('Pausar', 'Pause')
+              : PortfolioScope.of(context).bi('Reproduzir', 'Play'),
           icon: Icon(
             controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
           ),

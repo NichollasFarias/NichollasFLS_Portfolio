@@ -5,13 +5,10 @@ extension _ProfilePages on _SitePageState {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       sectionHeader(
-        bi('SOBRE / A TRAJETÓRIA', 'ABOUT / THE JOURNEY'),
-        bi(
-          'Entender. Experimentar.\nConstruir.',
-          'Understand. Experiment.\nBuild.',
-        ),
+        bi('01 / SOBRE MIM', '01 / ABOUT ME'),
+        bi('Curiosidade é meu motor.', 'Curiosity drives me.'),
       ),
-      gap(36),
+      gap(28),
       split(
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,100 +27,174 @@ extension _ProfilePages on _SitePageState {
               ),
             ),
             gap(),
-            copy(
-              bi(
-                'Desde abril de 2025, trabalho com desenvolvimento de aplicativos na CodeCycle. Continuo explorando hardware, sistemas embarcados, novas tecnologias e projetos autorais.',
-                'Since April 2025, I have worked on application development at CodeCycle. I continue to explore hardware, embedded systems, new technologies and independent projects.',
-              ),
-            ),
+            tags([
+              'Flutter / Dart',
+              'FlutterFlow',
+              'C#',
+              'Python',
+              'SQLite',
+              'ESP32',
+              'Arduino',
+              'Fusion 360',
+            ]),
           ],
         ),
-        portrait(),
+        Container(
+          padding: const EdgeInsets.all(30),
+          decoration: BoxDecoration(
+            color: panel,
+            border: Border.all(color: line),
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(28),
+              bottomRight: Radius.circular(28),
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Icon(Icons.shield_outlined, color: ice, size: 38),
+              gap(),
+              heading(
+                bi(
+                  'Imaginar com liberdade.\nConstruir com método.',
+                  'Imagine freely.\nBuild with method.',
+                ),
+                size: 30,
+              ),
+              gap(),
+              copy(
+                bi(
+                  'Ciência, jogos, software e hardware. Minha trajetória é feita das conexões entre essas áreas.',
+                  'Science, games, software and hardware. My journey is built on the connections between these fields.',
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
-      gap(70),
-      eyebrow(bi('LINHA DO TEMPO', 'TIMELINE')),
+      gap(48),
       timeline(),
-      gap(60),
-      heading(
-        bi('Especialidades em conexão.', 'Connected specialties.'),
-        size: 36,
-      ),
-      gap(),
-      tags([
-        'Flutter / Dart',
-        'FlutterFlow',
-        'Firebase',
-        'SQLite',
-        'C#',
-        'Python',
-        'ESP32',
-        'Arduino',
-        'Fusion 360',
-        'Git',
-      ]),
-      gap(60),
-      contactBanner(),
     ],
   );
-  Widget timeline() => Column(
-    children: [
-      timelineItem(
-        '2019',
-        bi('Técnico em Jogos Digitais', 'Digital Games technical training'),
-        bi(
-          'ETEC Aristóteles Ferreira · Unity, C# e projetos em equipe.',
-          'ETEC Aristóteles Ferreira · Unity, C# and team projects.',
+  Widget timeline() => Container(
+    decoration: const BoxDecoration(
+      border: Border(left: BorderSide(color: violet, width: 1)),
+    ),
+    child: Column(
+      children: [
+        timelineItem(
+          bi('ORIGEM', 'ORIGIN'),
+          bi('A curiosidade antes do código', 'Curiosity before code'),
+          bi(
+            'Experimentos, eletrônicos desmontados e o interesse por ciência, robótica e computação desde criança.',
+            'Experiments, taking electronics apart and an interest in science, robotics and computing since childhood.',
+          ),
+          0,
         ),
-      ),
-      timelineItem(
-        '2024',
-        bi('Engenharia da Computação', 'Computer Engineering'),
-        bi(
-          'Universidade Santa Cecília · TCC de segurança modular e publicação acadêmica.',
-          'Universidade Santa Cecília · Modular security capstone and academic publication.',
+        timelineItem(
+          '2019',
+          bi('ETEC · Jogos Digitais', 'ETEC · Digital Games'),
+          bi(
+            'Unity, programação e criação de narrativas, inimigos e cenários.',
+            'Unity, programming and creating stories, enemies and environments.',
+          ),
+          1,
         ),
-      ),
-      timelineItem(
-        '2025',
-        bi('Desenvolvimento profissional', 'Professional development'),
-        bi(
-          'CodeCycle desde abril · Desenvolvimento de aplicativos.',
-          'CodeCycle since April · Application development.',
+        timelineItem(
+          bi('GRADUAÇÃO', 'UNIVERSITY'),
+          bi(
+            'Eletrônica, automação e robótica',
+            'Electronics, automation and robotics',
+          ),
+          bi(
+            'Aproximação entre código, sensores e protótipos físicos durante a faculdade.',
+            'Connecting code, sensors and physical prototypes during college.',
+          ),
+          2,
         ),
-      ),
-      timelineItem(
-        '2026',
-        bi('Química e projetos autorais', 'Chemistry and independent projects'),
-        bi(
-          'Liceu Santista · Formação técnica em Química e evolução dos produtos autorais.',
-          'Liceu Santista · Chemistry technical training and independent product development.',
+        timelineItem(
+          '2024',
+          bi('Engenharia da Computação', 'Computer Engineering'),
+          bi(
+            'Unisanta · Sistema Modular de Segurança, SafeTrack Center e publicação no COBRIC.',
+            'Unisanta · Modular Security System, SafeTrack Center and COBRIC publication.',
+          ),
+          3,
         ),
-      ),
-    ],
+        timelineItem(
+          bi('ABR 2025', 'APR 2025'),
+          'CodeCycle',
+          bi(
+            'Início da atuação profissional no desenvolvimento de aplicativos.',
+            'Beginning professional work in application development.',
+          ),
+          4,
+        ),
+        timelineItem(
+          '2026',
+          bi('Técnico em Química', 'Chemistry technical training'),
+          bi(
+            'Liceu Santista · Ciência aplicada, análise de resultados e processos.',
+            'Liceu Santista · Applied science, results analysis and processes.',
+          ),
+          5,
+        ),
+        timelineItem(
+          bi('EM EVOLUÇÃO', 'IN PROGRESS'),
+          bi(
+            'Projetos autorais · Lancelot Forge',
+            'Independent projects · Lancelot Forge',
+          ),
+          bi(
+            'Aplicativos próprios, serviços de tecnologia e criação em 3D.',
+            'Independent applications, technology services and 3D creation.',
+          ),
+          6,
+        ),
+      ],
+    ),
   );
-  Widget timelineItem(String year, String title, String description) =>
-      Container(
-        padding: const EdgeInsets.symmetric(vertical: 24),
-        decoration: const BoxDecoration(
-          border: Border(bottom: BorderSide(color: line)),
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(width: 70, child: copy(year, color: ice, size: 15)),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  copy(title, size: 22, color: Colors.white),
-                  gap(8),
-                  copy(description),
-                ],
-              ),
+  Widget timelineItem(
+    String year,
+    String title,
+    String description, [
+    int order = 0,
+  ]) => Reveal(
+    scroll: scroll,
+    order: order,
+    child: Padding(
+      padding: const EdgeInsets.only(left: 24, bottom: 28, top: 8),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Padding(
+            padding: EdgeInsets.only(top: 6, right: 16),
+            child: RotatedBox(
+              quarterTurns: 0,
+              child: Icon(Icons.diamond_outlined, size: 16, color: ice),
             ),
-          ],
-        ),
-      );
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                copy(year, size: 10, color: ice),
+                gap(5),
+                copy(
+                  title,
+                  size: 22,
+                  color: Colors.white,
+                  weight: FontWeight.w500,
+                ),
+                gap(8),
+                copy(description, size: 14),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
   Widget experience() => Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -168,7 +239,6 @@ extension _ProfilePages on _SitePageState {
         ),
       ),
       gap(60),
-      contactBanner(),
     ],
   );
   Widget education() => Column(
@@ -185,27 +255,7 @@ extension _ProfilePages on _SitePageState {
         ),
       ),
       gap(36),
-      timelineItem(
-        '2024',
-        bi(
-          'Bacharelado em Engenharia da Computação',
-          'Bachelor’s degree in Computer Engineering',
-        ),
-        'Universidade Santa Cecília — Unisanta',
-      ),
-      timelineItem(
-        '2019',
-        bi(
-          'Técnico em Programação de Jogos Digitais',
-          'Technical qualification in Digital Game Programming',
-        ),
-        'ETEC Aristóteles Ferreira',
-      ),
-      timelineItem(
-        '2026',
-        bi('Técnico em Química', 'Technical qualification in Chemistry'),
-        'Liceu Santista',
-      ),
+      CertificateCarousel(certificates: s.content.certificates),
       gap(60),
       eyebrow(bi('PUBLICAÇÃO ACADÊMICA', 'ACADEMIC PUBLICATION')),
       heading(
@@ -240,8 +290,8 @@ extension _ProfilePages on _SitePageState {
       gap(20),
       copy(
         bi(
-          'A formação é apresentada em texto para preservar os dados pessoais dos documentos originais.',
-          'Qualifications are presented as text to protect personal information in original documents.',
+          'As prévias mostram documentos reais com dados privados ocultados.',
+          'Previews show real documents with private information hidden.',
         ),
         size: 12,
       ),

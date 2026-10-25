@@ -1,5 +1,9 @@
-# Flutter v1.0.0
+# Migração Flutter v1.1.0
 
-A versão histórica na raiz foi preservada. O novo código está em flutter_site/. A branch flutter-v1.0.0 não publica automaticamente. Workflow manual permite validar e, após conferir a configuração Pages, publicar com publish=true.
+A branch flutter-v1.1.0 evolui o código preservado da v1.0.0. O código está em flutter_site/. A interface agora é Single Page, com projetos e documentos em sobreposição.
 
-Backup histórico: commit 73b82d7ebc3a6bde993c769bdf608cd08b769eee. Para reverter sem reescrever histórico, restaure o método de publicação anterior e publique esse snapshot. Não usar force-push. Consulte os relatórios locais de entrega.
+Não publicar a raiz histórica deste repositório. O artefato a publicar é flutter_site/build/web/.
+
+Produção anterior preservada: branch pages-flutter-v1.0.0, commit d07e2f9a721f75107162f6cb235f7af7d9991df2. Código anterior: flutter-v1.0.0, commit 577302472fa599991f0c77bccc399ebb7b78ea3a. A main histórica também foi preservada.
+
+A nova distribuição utiliza pages-flutter-v1.1.0. Para reverter, altere Settings > Pages para pages-flutter-v1.0.0, /(root), aguarde a publicação e confirme o endereço público. Não reescrever histórico nem usar force-push.

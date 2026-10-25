@@ -1,10 +1,8 @@
-# Nichollas F. L. Santos — Flutter Web v1.0.0
+# Nichollas F. L. Santos — Flutter Web v1.1.0
 
-Portfólio bilíngue PT-BR/EN, sem backend. Flutter 3.41.5 / Dart 3.11.3, null safety. Conteúdo local em `assets/content.json` e mídias selecionadas em `assets/media/`.
+Evolução da v1.0.0 em Flutter/Dart. Uma página contínua: Hero, Sobre e linha do tempo, destaques, catálogo de 22 projetos, CodeCycle, formação e certificados, Lancelot Forge, contato e rodapé.
 
-## Desenvolvimento
-
-Flutter SDK com suporte web é necessário apenas para editar/recompilar:
+## Executar e validar
 
 ```powershell
 flutter pub get
@@ -14,31 +12,47 @@ flutter run -d chrome
 flutter build web --release --base-href /NichollasFLS_Portfolio/ --no-web-resources-cdn
 ```
 
-O build deve ser servido por HTTP; não abrir `index.html` como file://. A entrega inclui um inicializador por duplo clique para Windows.
+O build estático precisa ser servido por HTTP. A entrega contém um inicializador por duplo clique para Windows. Não abrir index.html por file://.
 
-## Arquitetura
+## Navegação e estado
 
-- `main.dart`: bootstrap e preferência persistida.
-- `app.dart`: tema, idiomas e navegação por hash.
-- `pages.dart`, `home.dart`, `profile.dart`, `projects.dart`: páginas e catálogo.
-- `content.dart`: modelos e filtros combináveis.
-- `components.dart`: componentes e circuitos vetoriais.
-- `media.dart`: imagem, galeria com zoom e vídeo sem autoplay.
+- Um SitePage permanece montado com um ScrollController e âncoras GlobalKey. O menu chama Scrollable.ensureVisible e fecha o drawer mobile.
+- A posição, busca, filtros e índice do carrossel continuam ativos ao fechar uma sobreposição.
+- Projetos abrem por showGeneralDialog, com fechamento fixo, compartilhamento de link e rolagem própria. Links #/project/<id> abrem o mesmo modal sobre a Home; o botão voltar do navegador fecha o modal. Links antigos de seções são tratados como atalhos para rolagem, sem páginas visuais adicionais.
+- Português/inglês usam o estado herdado da v1.0.0. A chave SharedPreferences portfolio.language foi preservada.
+- Progresso e seção ativa usam ValueNotifier para evitar reconstrução da página a cada pixel.
 
-O idioma vem de um único estado herdado. A preferência usa SharedPreferences; indisponibilidade de armazenamento mantém a preferência apenas na sessão. Rotas: `#/`, `#/projects`, `#/about`, `#/experience`, `#/education`, `#/forge`, `#/contact`, `#/project/<id>`. Rotas desconhecidas têm recuperação para a Home. Hash routing permite atualizar diretamente sem regras de rewrite no Pages.
+## Organização
 
-Mídias de vídeo só são inicializadas ao abrir a galeria. Imagens locais são carregadas pelo bundle e reutilizadas pelo cache Flutter. Os mockups são identificados como composições, sem comprovar cada recurso ilustrado. Textos originais dentro das mídias permanecem fiéis às imagens fornecidas.
+- app.dart / main.dart: inicialização, tema e idiomas.
+- pages.dart: shell Single Page, âncoras, progresso e modais.
+- home.dart / profile.dart / projects.dart: seções, catálogo e estudos de caso.
+- content.dart: modelos, metadados e filtros combináveis.
+- certificates.dart: PageView, dois documentos por página em desktop, um em mobile, setas, arraste e ampliação.
+- motion.dart: reveal de entrada, executado uma vez por elemento ao entrar no viewport.
+- heraldry.dart: geometrias de escudo, molduras metálicas e divisórias ornamentais, desenhadas em código.
+- media.dart: imagens, zoom e player sob demanda, sem autoplay.
 
-## GitHub Pages
+## Conteúdo e certificados
 
-URL atual verificada: https://nichollasfarias.github.io/NichollasFLS_Portfolio/
+assets/content.json mantém os 22 projetos e suas fichas PT/EN. collections permite múltiplos filtros: personal e forge, sem duplicar projetos no catálogo. Preserve o estágio real e a atribuição da participação.
 
-Base configurada: `/NichollasFLS_Portfolio/`. O workflow manual valida o build; a implantação exige escolher `publish=true` e confirmar antes que Pages use GitHub Actions. O SDK é fixado em 3.41.5 stable no CI. Nenhum push comum inicia publicação. Se hospedar na raiz de outro domínio, recompile com `--base-href /`.
+certificates contém metadados traduzidos, instituição, ano e nome de uma prévia WebP pública. Não adicione PDFs ou fotografias brutas de documentos. As seis prévias fornecidas foram rasterizadas/achatadas com identificação pessoal, nascimento, códigos de validação, números de documentos e assinaturas ocultados conforme aplicável. Os originais ficam fora do código e do build.
 
-Ao usar este projeto como subpasta `flutter_site` do repositório histórico, o workflow da raiz deve executar comandos em `flutter_site` e enviar `flutter_site/build/web` ao Pages.
+O ano principal é a conclusão/participação. A legenda diferencia emissão: Engenharia concluída em 2024, diploma de 2025; Jogos concluído em 2019, diploma de 2021. A instituição emissora de Química foi conferida no documento. O comprovante Big Data & AI representa participação em evento, sem alegação de certificação técnica. O curso Wizard não altera o nível aprovado de inglês intermediário.
 
-## Conteúdo e privacidade
+Textos dentro das mídias autênticas continuam no idioma original; os metadados e as legendas são bilíngues. Os cinco vídeos da v1.0.0 foram preservados, sem faixas de áudio.
 
-Atualize ambas as línguas dos campos de cada projeto. Nunca incluir credenciais, documentos originais com dados pessoais ou projetos excluídos. Não inserir código de TCC no bundle web. Sem analytics, rastreamento ou formulário. Idioma é o único dado persistido.
+## Movimento e responsividade
 
-Ao publicar outra compilação, atualize o token de release em web/index.html e web/flutter_bootstrap.js para invalidar o cache do entrypoint.
+Sem loop de partículas ou animações decorativas permanentes. Reveal, scroll programático, hover, galeria e modal de projetos consultam MediaQuery.disableAnimations. PageView aceita touch, mouse, trackpad e stylus. Animações de widgets padrão seguem o comportamento do framework.
+
+## Publicação e reversão
+
+URL: https://nichollasfarias.github.io/NichollasFLS_Portfolio/
+
+Base: /NichollasFLS_Portfolio/. Código na branch flutter-v1.1.0; distribuição na pages-flutter-v1.1.0. A versão anterior permanece em flutter-v1.0.0 e pages-flutter-v1.0.0. O Pages usa publicação legacy a partir da raiz da branch de distribuição, com .nojekyll. Somente o build estático é publicado.
+
+O workflow preparado é manual e exige configuração Pages para GitHub Actions antes de usá-lo como alternativa. O deploy desta entrega utiliza o build validado localmente. Para reverter, selecione pages-flutter-v1.0.0 e /(root) em Settings > Pages, salve e aguarde o build, sem force-push.
+
+Ao publicar outra compilação, altere o token de release em web/index.html e web/flutter_bootstrap.js para evitar reuso do entrypoint pelo cache. O token desta entrega é 1.1.0-r1.

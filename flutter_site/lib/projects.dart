@@ -13,7 +13,19 @@ extension _ProjectPages on _SitePageState {
         spacing: 24,
         runSpacing: 28,
         children: projects
-            .map((p) => SizedBox(width: w, child: projectCard(p)))
+            .asMap()
+            .entries
+            .map(
+              (e) => SizedBox(
+                width: w,
+                child: Reveal(
+                  key: ValueKey('reveal-${e.value.id}'),
+                  scroll: scroll,
+                  order: e.key,
+                  child: projectCard(e.value),
+                ),
+              ),
+            )
             .toList(),
       );
     },
@@ -24,23 +36,26 @@ extension _ProjectPages on _SitePageState {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AspectRatio(
-          aspectRatio: 1.65,
-          child: ClipRRect(
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
-            child: p.image != null
-                ? ProjectImage(p.image!, label: p.text('title', s.lang))
-                : CustomPaint(
-                    painter: CircuitPainter(),
-                    child: Center(
-                      child: Text(
-                        p.data['glyph'] as String? ?? '</>',
-                        style: const TextStyle(fontSize: 54, color: ice),
+        if (p.image != null)
+          AspectRatio(
+            aspectRatio: 1.65,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(12),
+              ),
+              child: p.image != null
+                  ? ProjectImage(p.image!, label: p.text('title', s.lang))
+                  : CustomPaint(
+                      painter: CircuitPainter(),
+                      child: Center(
+                        child: Text(
+                          p.data['glyph'] as String? ?? '</>',
+                          style: const TextStyle(fontSize: 54, color: ice),
+                        ),
                       ),
                     ),
-                  ),
+            ),
           ),
-        ),
         Padding(
           padding: const EdgeInsets.all(22),
           child: Column(
@@ -116,10 +131,12 @@ extension _ProjectPages on _SitePageState {
             value;
   String categoryLabel(String c) => switch (c) {
     'apps' => bi('Autorais', 'Independent'),
-    'eng' => bi('Engenharia', 'Engineering'),
+    'eng' => bi('Engenharia da Computação', 'Computer Engineering'),
+    'personal' => bi('Projetos pessoais', 'Personal projects'),
+    'forge' => 'Lancelot Forge',
     'games' => bi('Jogos digitais', 'Digital games'),
     'chem' => bi('Química', 'Chemistry'),
-    'work' => bi('Profissional', 'Professional'),
+    'work' => 'CodeCycle',
     'archive' => bi('Acervo acadêmico', 'Coursework'),
     _ => bi('Todos', 'All'),
   };
@@ -141,15 +158,25 @@ extension _ProjectPages on _SitePageState {
       Wrap(
         spacing: 8,
         runSpacing: 10,
-        children: ['all', 'apps', 'eng', 'games', 'chem', 'work', 'archive']
-            .map(
-              (c) => ChoiceChip(
-                label: Text(categoryLabel(c)),
-                selected: category == c,
-                onSelected: (_) => update(() => category = c),
-              ),
-            )
-            .toList(),
+        children:
+            [
+                  'all',
+                  'eng',
+                  'games',
+                  'chem',
+                  'work',
+                  'personal',
+                  'forge',
+                  'archive',
+                ]
+                .map(
+                  (c) => ChoiceChip(
+                    label: Text(categoryLabel(c)),
+                    selected: category == c,
+                    onSelected: (_) => update(() => category = c),
+                  ),
+                )
+                .toList(),
       ),
       gap(24),
       LayoutBuilder(
@@ -270,32 +297,10 @@ extension _ProjectPages on _SitePageState {
       ),
     ],
   );
-  Widget detailOr404() {
-    final id = widget.path.startsWith('/project/')
-        ? widget.path.substring(9)
-        : '';
-    final matches = s.content.projects.where((p) => p.id == id);
-    if (matches.isEmpty) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          eyebrow('404'),
-          heading(bi('Página não encontrada.', 'Page not found.')),
-          gap(),
-          action(bi('Voltar ao início', 'Back home'), () => go('/')),
-        ],
-      );
-    }
-    final p = matches.first;
+  Widget projectDetails(Project p, BuildContext modalContext) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextButton.icon(
-          onPressed: () => go('/projects'),
-          icon: const Icon(Icons.arrow_back),
-          label: Text(bi('Todos os projetos', 'All projects')),
-        ),
-        gap(24),
         eyebrow('${categoryLabel(p.category)} / ${p.year}'),
         heading(
           p.text('title', s.lang),
@@ -307,45 +312,41 @@ extension _ProjectPages on _SitePageState {
         tags([s.t(p.status), ...p.tech.map(techLabel)]),
         gap(38),
         if (p.image != null)
-          InkWell(
-            onTap: () => openGallery(
-              context,
-              p.media,
-              0,
-              p.text('title', s.lang),
-              bi('Fechar', 'Close'),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(14),
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxHeight: 560),
-                child: ProjectImage(
-                  p.image!,
-                  label: p.text('title', s.lang),
-                  fit: BoxFit.contain,
+          split(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                InkWell(
+                  onTap: () => openGallery(
+                    modalContext,
+                    p.media,
+                    0,
+                    p.text('title', s.lang),
+                    bi('Fechar', 'Close'),
+                    ownerScroll: detailController,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxHeight: 500),
+                      child: ProjectImage(
+                        p.image!,
+                        label: p.text('title', s.lang),
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+                gap(16),
+                copy(mediaLabel(p), size: 11, color: ice),
+              ],
             ),
-          ),
-        gap(30),
-        if (p.image != null) copy(mediaLabel(p), size: 12, color: ice),
-        gap(36),
-        split(
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              eyebrow(bi('CONTEXTO + OBJETIVO', 'CONTEXT + OBJECTIVE')),
-              copy(p.text('details', s.lang)),
-            ],
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              eyebrow(bi('MINHA PARTICIPAÇÃO', 'MY CONTRIBUTION')),
-              copy(p.text('role', s.lang)),
-            ],
-          ),
-        ),
+            projectOverview(p),
+            left: 6,
+            right: 5,
+          )
+        else
+          projectOverview(p),
         gap(40),
         if (p.id == 'safetrack') ...safeTrackCase(),
         if (p.text('result', s.lang).isNotEmpty) ...[
@@ -371,13 +372,15 @@ extension _ProjectPages on _SitePageState {
                       (e) => SizedBox(
                         width: w,
                         child: HoverCard(
+                          key: Key('project-gallery-${p.id}-${e.key}'),
                           label: '${p.text('title', s.lang)} ${e.key + 1}',
                           onTap: () => openGallery(
-                            context,
+                            modalContext,
                             p.media,
                             e.key,
                             p.text('title', s.lang),
                             bi('Fechar', 'Close'),
+                            ownerScroll: detailController,
                           ),
                           child: AspectRatio(
                             aspectRatio: 1.6,
@@ -423,11 +426,25 @@ extension _ProjectPages on _SitePageState {
               .toList(),
         ),
         gap(60),
-        contactBanner(),
       ],
     );
   }
 
+  Widget projectOverview(Project p) => Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      eyebrow(
+        bi(
+          'CONTEXTO, OBJETIVO E FUNCIONAMENTO',
+          'CONTEXT, OBJECTIVE & FUNCTIONALITY',
+        ),
+      ),
+      copy(p.text('details', s.lang)),
+      gap(28),
+      eyebrow(bi('MINHA PARTICIPAÇÃO', 'MY CONTRIBUTION')),
+      copy(p.text('role', s.lang)),
+    ],
+  );
   String mediaLabel(Project p) => switch (p.data['mediaKind']) {
     'mockup' => bi(
       'Composição promocional fornecida pelo autor. O visual não comprova todas as funcionalidades ilustradas.',

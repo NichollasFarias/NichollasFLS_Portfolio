@@ -5,6 +5,9 @@ import 'app.dart';
 import 'components.dart';
 import 'content.dart';
 import 'media.dart';
+import 'motion.dart';
+import 'heraldry.dart';
+import 'certificates.dart';
 part 'home.dart';
 part 'profile.dart';
 part 'projects.dart';
@@ -19,115 +22,357 @@ class SitePage extends StatefulWidget {
 class _SitePageState extends State<SitePage> {
   String category = 'all', query = '', status = 'all', technology = 'all';
   final scroll = ScrollController();
+  final progress = ValueNotifier<double>(0);
+  final active = ValueNotifier<String>('/');
+  final anchors = {
+    for (final key in [
+      '/',
+      '/about',
+      '/featured',
+      '/projects',
+      '/experience',
+      '/education',
+      '/forge',
+      '/contact',
+    ])
+      key: GlobalKey(),
+  };
+  bool initialHandled = false, observing = false;
+  bool projectOpen = false;
+  ScrollController? detailController;
   void update(VoidCallback callback) => setState(callback);
+  PortfolioScope get s => PortfolioScope.of(context);
+  String bi(String pt, String en) => s.bi(pt, en);
   @override
-  void dispose() {
-    scroll.dispose();
-    super.dispose();
+  void initState() {
+    super.initState();
+    scroll.addListener(observe);
   }
 
-  void go(String route) {
-    if (widget.path != route) {
-      Navigator.of(context).pushNamed(route);
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!initialHandled) {
+      initialHandled = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && widget.path != '/') {
+          go(widget.path);
+        }
+      });
     }
   }
 
-  PortfolioScope get s => PortfolioScope.of(context);
-  String bi(String pt, String en) => s.bi(pt, en);
-  Future<void> external(String value) async {
-    final ok = await launchUrl(
-      Uri.parse(value),
-      mode: LaunchMode.platformDefault,
+  void observe() {
+    if (observing) {
+      return;
+    }
+    observing = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      observing = false;
+      if (!mounted || !scroll.hasClients) {
+        return;
+      }
+      progress.value = scroll.position.maxScrollExtent <= 0
+          ? 0
+          : (scroll.offset / scroll.position.maxScrollExtent).clamp(0, 1);
+      var current = '/';
+      for (final entry in anchors.entries) {
+        final box = entry.value.currentContext?.findRenderObject();
+        if (box is RenderBox &&
+            box.hasSize &&
+            box.localToGlobal(Offset.zero).dy < 180) {
+          current = entry.key;
+        }
+      }
+      active.value = current;
+    });
+  }
+
+  @override
+  void dispose() {
+    scroll.removeListener(observe);
+    detailController?.dispose();
+    detailController = null;
+    scroll.dispose();
+    progress.dispose();
+    active.dispose();
+    super.dispose();
+  }
+
+  Future<void> go(String route) async {
+    if (route.startsWith('/project/')) {
+      await openProject(route.substring(9));
+      return;
+    }
+    final anchor = anchors[route]?.currentContext;
+    if (anchor == null) {
+      return;
+    }
+    await Scrollable.ensureVisible(
+      anchor,
+      alignment: .015,
+      duration: MediaQuery.disableAnimationsOf(context)
+          ? Duration.zero
+          : const Duration(milliseconds: 650),
+      curve: Curves.easeInOutCubic,
     );
-    if (!ok && mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            bi('Não foi possível abrir: $value', 'Unable to open: $value'),
-          ),
+    observe();
+  }
+
+  Future<void> openProject(String id) async {
+    final matches = s.content.projects.where((p) => p.id == id);
+    if (projectOpen || matches.isEmpty) {
+      return;
+    }
+    projectOpen = true;
+    final previousOffset = scroll.hasClients ? scroll.offset : 0.0;
+    detailController = ScrollController();
+    final p = matches.first;
+    await showGeneralDialog<void>(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: bi('Fechar projeto', 'Close project'),
+      barrierColor: ink.withValues(alpha: .9),
+      routeSettings: RouteSettings(name: '/project/$id'),
+      transitionDuration: MediaQuery.disableAnimationsOf(context)
+          ? Duration.zero
+          : const Duration(milliseconds: 250),
+      transitionBuilder: (_, animation, _, child) => FadeTransition(
+        opacity: animation,
+        child: SlideTransition(
+          position: Tween(
+            begin: const Offset(0, .035),
+            end: Offset.zero,
+          ).animate(animation),
+          child: child,
         ),
+      ),
+      pageBuilder: (ctx, _, _) => Builder(
+        builder: (dialogContext) {
+          final locale = PortfolioScope.of(dialogContext);
+          return SafeArea(
+            child: Dialog(
+              key: const Key('project-modal'),
+              backgroundColor: panel,
+              insetPadding: EdgeInsets.all(
+                MediaQuery.sizeOf(ctx).width < 600 ? 8 : 28,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+                side: const BorderSide(color: line),
+              ),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 1180),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 10,
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.shield_outlined,
+                            color: ice,
+                            size: 22,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              p.text('title', locale.lang),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          IconButton(
+                            key: const Key('project-share'),
+                            tooltip: locale.bi(
+                              'Copiar link do projeto',
+                              'Copy project link',
+                            ),
+                            onPressed: () async {
+                              await Clipboard.setData(
+                                ClipboardData(
+                                  text: Uri.base
+                                      .replace(fragment: '/project/$id')
+                                      .toString(),
+                                ),
+                              );
+                              if (mounted) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      locale.bi(
+                                        'Link copiado.',
+                                        'Link copied.',
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                            },
+                            icon: const Icon(Icons.link),
+                          ),
+                          IconButton(
+                            key: const Key('project-close'),
+                            tooltip: locale.bi(
+                              'Fechar projeto',
+                              'Close project',
+                            ),
+                            onPressed: () => Navigator.pop(dialogContext),
+                            icon: const Icon(Icons.close),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Divider(height: 1),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        key: const Key('project-detail-scroll'),
+                        controller: detailController,
+                        padding: EdgeInsets.all(
+                          MediaQuery.sizeOf(ctx).width < 600 ? 20 : 44,
+                        ),
+                        child: projectDetails(p, dialogContext),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+    projectOpen = false;
+    detailController?.dispose();
+    detailController = null;
+    if (mounted) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && scroll.hasClients) {
+          scroll.jumpTo(
+            previousOffset.clamp(0, scroll.position.maxScrollExtent),
+          );
+        }
+      });
+    }
+  }
+
+  Future<void> external(String url) async {
+    try {
+      final success = await launchUrl(
+        Uri.parse(url),
+        mode: LaunchMode.platformDefault,
       );
+      if (!success) {
+        throw StateError('Link unavailable');
+      }
+    } catch (_) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              bi('Não foi possível abrir: $url', 'Unable to open: $url'),
+            ),
+          ),
+        );
+      }
     }
   }
 
   List<(String, String)> get nav => [
     ('/', bi('Início', 'Home')),
-    ('/projects', bi('Projetos', 'Projects')),
     ('/about', bi('Sobre', 'About')),
+    ('/featured', bi('Destaques', 'Featured')),
+    ('/projects', bi('Projetos', 'Projects')),
     ('/experience', bi('Experiência', 'Experience')),
     ('/education', bi('Formação', 'Education')),
     ('/forge', 'Lancelot Forge'),
     ('/contact', bi('Contato', 'Contact')),
   ];
+  Widget section(String route, Widget child) => Container(
+    key: anchors[route],
+    padding: EdgeInsets.symmetric(vertical: route == '/' ? 32 : 52),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (route != '/') ...[const Ornament(), gap(48)],
+        Reveal(scroll: scroll, child: child),
+      ],
+    ),
+  );
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
-    final mobile = width < 1050;
-    final body = switch (widget.path) {
-      '/' => home(),
-      '/projects' => catalog(),
-      '/about' => about(),
-      '/experience' => experience(),
-      '/education' => education(),
-      '/forge' => forge(),
-      '/contact' => contact(),
-      _ => detailOr404(),
-    };
+    final mobile = width < 1180;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: ink,
+        backgroundColor: ink.withValues(alpha: .98),
         surfaceTintColor: Colors.transparent,
-        toolbarHeight: 82,
-        titleSpacing: width < 600 ? 20 : 40,
         automaticallyImplyLeading: false,
+        toolbarHeight: 76,
+        titleSpacing: width < 600 ? 20 : 40,
         title: InkWell(
           onTap: () => go('/'),
-          borderRadius: BorderRadius.circular(8),
-          child: Padding(
-            padding: const EdgeInsets.all(4),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Text(
-                  'N.',
-                  style: TextStyle(
-                    fontSize: 32,
-                    fontWeight: FontWeight.w900,
-                    color: ice,
-                  ),
-                ),
-                if (width > 430) ...[
-                  const SizedBox(width: 12),
-                  const Text(
-                    'NICHOLLAS\nF. L. SANTOS',
-                    style: TextStyle(
-                      fontSize: 10,
-                      height: 1.4,
-                      letterSpacing: 1.6,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ],
-              ],
-            ),
-          ),
-        ),
-        actions: [
-          if (!mobile)
-            ...nav
-                .skip(1)
-                .map(
-                  (item) => TextButton(
-                    onPressed: () => go(item.$1),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                width: 34,
+                height: 38,
+                child: CustomPaint(
+                  painter: HeraldicFrame(),
+                  child: const Center(
                     child: Text(
-                      item.$2,
+                      'N',
                       style: TextStyle(
-                        fontSize: 12,
-                        color: widget.path == item.$1 ? ice : silver,
+                        color: ice,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
                 ),
+              ),
+              if (width > 430) ...[
+                const SizedBox(width: 12),
+                const Text(
+                  'NICHOLLAS\nF. L. SANTOS',
+                  style: TextStyle(
+                    fontSize: 10,
+                    height: 1.4,
+                    letterSpacing: 1.6,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ],
+          ),
+        ),
+        actions: [
+          if (!mobile)
+            ValueListenableBuilder<String>(
+              valueListenable: active,
+              builder: (_, current, _) => Row(
+                children: nav
+                    .skip(1)
+                    .map(
+                      (item) => TextButton(
+                        key: Key('nav-${item.$1.substring(1)}'),
+                        onPressed: () => go(item.$1),
+                        child: Text(
+                          item.$2,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: current == item.$1 ? ice : silver,
+                          ),
+                        ),
+                      ),
+                    )
+                    .toList(),
+              ),
+            ),
           TextButton(
             key: const Key('language-toggle'),
             onPressed: () => s.changeLanguage(s.lang == 'pt' ? 'en' : 'pt'),
@@ -139,6 +384,7 @@ class _SitePageState extends State<SitePage> {
           if (mobile)
             Builder(
               builder: (ctx) => IconButton(
+                key: const Key('mobile-menu'),
                 tooltip: bi('Abrir menu', 'Open menu'),
                 icon: const Icon(Icons.menu),
                 onPressed: () => Scaffold.of(ctx).openEndDrawer(),
@@ -146,9 +392,19 @@ class _SitePageState extends State<SitePage> {
             ),
           const SizedBox(width: 12),
         ],
-        bottom: const PreferredSize(
-          preferredSize: Size.fromHeight(1),
-          child: Divider(height: 1),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(2),
+          child: ValueListenableBuilder<double>(
+            valueListenable: progress,
+            builder: (_, v, _) => LinearProgressIndicator(
+              key: const Key('reading-progress'),
+              value: v,
+              minHeight: 2,
+              color: ice,
+              backgroundColor: line,
+              semanticsLabel: bi('Progresso de leitura', 'Reading progress'),
+            ),
+          ),
         ),
       ),
       endDrawer: Drawer(
@@ -157,14 +413,25 @@ class _SitePageState extends State<SitePage> {
           child: ListView(
             children: [
               Padding(
-                padding: const EdgeInsets.all(24),
-                child: heading('N.', size: 40),
+                padding: const EdgeInsets.all(28),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    eyebrow('N / 2026'),
+                    heading(
+                      bi('Explore a jornada.', 'Explore the journey.'),
+                      size: 30,
+                    ),
+                    gap(),
+                    const Ornament(),
+                  ],
+                ),
               ),
               ...nav.map(
                 (item) => ListTile(
+                  key: Key('drawer-${item.$1}'),
                   title: Text(item.$2),
-                  trailing: const Icon(Icons.north_east, size: 18),
-                  selected: widget.path == item.$1,
+                  trailing: const Icon(Icons.south_east, size: 16, color: ice),
                   onTap: () {
                     Navigator.pop(context);
                     go(item.$1);
@@ -175,26 +442,35 @@ class _SitePageState extends State<SitePage> {
           ),
         ),
       ),
-      body: SizedBox(
-        child: SingleChildScrollView(
-          controller: scroll,
-          child: Column(
-            children: [
-              Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 1320),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: width < 600 ? 22 : 64,
-                      vertical: width < 600 ? 40 : 68,
-                    ),
-                    child: body,
+      body: SingleChildScrollView(
+        key: const Key('single-page-scroll'),
+        controller: scroll,
+        child: Column(
+          children: [
+            Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 1360),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: width < 600 ? 22 : 64,
+                  ),
+                  child: Column(
+                    children: [
+                      section('/', hero()),
+                      section('/about', about()),
+                      section('/featured', featured()),
+                      section('/projects', catalog()),
+                      section('/experience', experience()),
+                      section('/education', education()),
+                      section('/forge', forge()),
+                      section('/contact', contact()),
+                    ],
                   ),
                 ),
               ),
-              footer(),
-            ],
-          ),
+            ),
+            footer(),
+          ],
         ),
       ),
     );
@@ -204,57 +480,38 @@ class _SitePageState extends State<SitePage> {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       eyebrow(label),
-      heading(value, size: MediaQuery.sizeOf(context).width < 600 ? 36 : 48),
-    ],
-  );
-  Widget contactBanner() => Container(
-    width: double.infinity,
-    padding: const EdgeInsets.all(30),
-    decoration: BoxDecoration(
-      gradient: const LinearGradient(
-        colors: [Color(0xFF24133D), Color(0xFF121320)],
-      ),
-      border: Border.all(color: line),
-      borderRadius: BorderRadius.circular(16),
-    ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        eyebrow(bi('VAMOS CONSTRUIR ALGO', 'LET’S BUILD SOMETHING')),
-        heading(
-          bi(
-            'Uma boa conversa\né o primeiro passo.',
-            'A good conversation\nis the first step.',
-          ),
-          size: 32,
+      Semantics(
+        header: true,
+        child: heading(
+          value,
+          size: MediaQuery.sizeOf(context).width < 600 ? 36 : 48,
         ),
-        gap(),
-        action(bi('Entre em contato', 'Get in touch'), () => go('/contact')),
-      ],
-    ),
+      ),
+    ],
   );
   Widget footer() => Container(
     width: double.infinity,
-    padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 32),
+    padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 28),
     decoration: const BoxDecoration(
       border: Border(top: BorderSide(color: line)),
     ),
     child: Center(
       child: Wrap(
         spacing: 40,
-        runSpacing: 16,
+        runSpacing: 14,
         crossAxisAlignment: WrapCrossAlignment.center,
         children: [
-          copy('N.   © 2026 NICHOLLAS F. L. SANTOS', size: 11),
-          copy('FLUTTER WEB / v1.0.0', size: 10, color: ice),
-          TextButton(
-            onPressed: () => scroll.animateTo(
-              0,
-              duration: MediaQuery.of(context).disableAnimations
-                  ? Duration.zero
-                  : const Duration(milliseconds: 300),
-              curve: Curves.easeOut,
+          copy('N.  © 2026 NICHOLLAS F. L. SANTOS', size: 11),
+          copy(
+            bi(
+              'v1.1.0 · SOFTWARE / ENGENHARIA',
+              'v1.1.0 · SOFTWARE / ENGINEERING',
             ),
+            size: 10,
+            color: ice,
+          ),
+          TextButton(
+            onPressed: () => go('/'),
             child: Text(bi('Voltar ao topo ↑', 'Back to top ↑')),
           ),
         ],
