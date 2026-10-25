@@ -37,8 +37,6 @@
       "filterWork": "Profissional",
       "filterArchive": "Acervo",
       "showing": "projetos exibidos",
-      "privateNote": "Projetos privados e confidenciais não aparecem neste catálogo.",
-      "catalogNote": "Projetos acadêmicos são apresentados com seu escopo real. Projetos da CodeCycle têm informações públicas limitadas. Protótipos e produtos em desenvolvimento estão identificados.",
       "experienceLabel": "EXPERIÊNCIA PROFISSIONAL",
       "currentRole": "ATUAÇÃO ATUAL",
       "experienceTitle": "Código em<br><em>produção.</em>",
@@ -46,9 +44,8 @@
       "present": "PRESENTE",
       "roleTitle": "Desenvolvimento de Software / Aplicativos · PJ",
       "cofShort": "Aplicativo educacional para alunos de medicina; projeto funcional, posteriormente descontinuado.",
-      "globalShort": "Participação técnica na continuidade e manutenção do aplicativo publicado.",
-      "shelfShort": "Participação técnica na evolução do aplicativo de estoque.",
-      "nda": "Os produtos pertencem à CodeCycle. Não são exibidos código privado, arquitetura interna ou equipamentos confidenciais.",
+      "globalShort": "Aplicativo de gerenciamento de tarefas e atividades em campo, voltado à organização de operações e acompanhamento de equipes.",
+      "shelfShort": "Aplicativo para organização e gerenciamento de estoques, com foco no controle de informações e processos operacionais.",
       "story": "MINHA TRAJETÓRIA",
       "beyondCode": "ALÉM DO CÓDIGO",
       "aboutTitle": "Curiosidade<br>é meu <em>motor.</em>",
@@ -75,23 +72,20 @@
       "statusWip": "Em desenvolvimento",
       "statusArchive": "Acadêmico",
       "statusDiscontinued": "Descontinuado",
-      "statusWork": "Equipe técnica",
+      "statusWork": "Atuação profissional",
       "statusShown": "Demonstrado",
       "statusUnknown": "A confirmar",
       "openProject": "Ver detalhes",
-      "role": "MINHA CONTRIBUIÇÃO",
       "scope": "CONTEXTO / RESULTADO",
       "gallery": "REGISTROS REAIS",
       "code": "Repositório público",
       "publication": "Publicação acadêmica",
       "playStore": "Página pública do aplicativo",
       "youtube": "Vídeo público",
-      "noMedia": "Imagens ou demonstração ainda não disponíveis para este projeto.",
       "contactCopied": "E-mail copiado!",
       "contactFallback": "E-mail: ni.chollas@outlook.com",
       "mediaPhoto": "Foto / captura do projeto",
-      "mediaVideo": "Demonstração em vídeo",
-      "logoNote": "Visual provisório — sem screenshots do produto"
+      "mediaVideo": "Demonstração em vídeo"
     },
     "en": {
       "skip": "Skip to content",
@@ -130,8 +124,6 @@
       "filterWork": "Professional",
       "filterArchive": "Archive",
       "showing": "projects shown",
-      "privateNote": "Private and confidential projects are not displayed.",
-      "catalogNote": "Academic projects are described within their real scope. CodeCycle work only includes limited public information. Prototypes and work-in-progress products are identified.",
       "experienceLabel": "PROFESSIONAL EXPERIENCE",
       "currentRole": "CURRENT ROLE",
       "experienceTitle": "Software in<br><em>production.</em>",
@@ -139,9 +131,8 @@
       "present": "PRESENT",
       "roleTitle": "Software / App Developer · Contractor",
       "cofShort": "Educational application for medical students; functional project, later discontinued.",
-      "globalShort": "Technical involvement in the ongoing development and maintenance of the published app.",
-      "shelfShort": "Technical involvement in the evolution of the inventory application.",
-      "nda": "These products belong to CodeCycle. No private code, internal architecture, or confidential equipment is shown.",
+      "globalShort": "A field task management app for organizing operations and tracking teams.",
+      "shelfShort": "An inventory management app focused on organizing information and operational processes.",
       "story": "MY JOURNEY",
       "beyondCode": "BEYOND THE CODE",
       "aboutTitle": "Curiosity is<br>my <em>engine.</em>",
@@ -168,23 +159,20 @@
       "statusWip": "In development",
       "statusArchive": "Academic",
       "statusDiscontinued": "Discontinued",
-      "statusWork": "Technical team",
+      "statusWork": "Professional work",
       "statusShown": "Demonstrated",
       "statusUnknown": "To confirm",
       "openProject": "View details",
-      "role": "MY CONTRIBUTION",
       "scope": "CONTEXT / OUTCOME",
       "gallery": "ACTUAL PROJECT MEDIA",
       "code": "Public repository",
       "publication": "Research publication",
       "playStore": "Public app listing",
       "youtube": "Public video",
-      "noMedia": "Images or demonstrations are not available yet for this project.",
       "contactCopied": "Email copied!",
       "contactFallback": "Email: ni.chollas@outlook.com",
       "mediaPhoto": "Project photo / screenshot",
-      "mediaVideo": "Video demonstration",
-      "logoNote": "Provisional visual — not a product screenshot"
+      "mediaVideo": "Video demonstration"
     }
   },
   "projects": [
@@ -211,16 +199,16 @@
         ]
       ],
       "text": {
-        "pt": "Sistema de segurança modular, aplicativo mobile e central de gestão com estoque e funcionários.",
-        "en": "Modular security system, mobile application, and management hub with inventory and employee records."
+        "pt": "Sistema modular de segurança que integra sensores, monitoramento remoto, aplicativo móvel e central de gerenciamento.",
+        "en": "A modular security system integrating sensors, remote monitoring, a mobile app and a management hub."
       },
       "details": {
-        "pt": "Projeto final de Engenharia da Computação, idealizado para pequenas empresas com foco em baixo custo. Cinco módulos: alarme, temperatura/gás, câmera/presença, energia e leitura RFID. O protótipo físico foi testado em casa e apresentado no TCC.",
-        "en": "Computer Engineering final project designed for small businesses with a low-cost focus. Five modules: alarm, temperature/gas, camera/motion, power monitoring, and RFID. The working prototype was tested at home and presented as a capstone."
+        "pt": "O SafeTrack conecta módulos físicos de segurança a uma infraestrutura digital de monitoramento. Sua arquitetura reúne dispositivos ESP32, sensores, RFID, aplicativo móvel e central desktop para acompanhar eventos e gerenciar informações operacionais.",
+        "en": "SafeTrack connects physical security modules to a digital monitoring infrastructure. Its architecture brings together ESP32 devices, sensors, RFID, a mobile app and a desktop hub to track events and manage operational information."
       },
       "role": {
-        "pt": "Desenvolvimento técnico individual relatado: hardware e integração dos módulos, aplicativo mobile em Expo, central Windows em C# e comunicação pelo Firebase Realtime Database. Artigo científico com coautoria acadêmica devidamente creditada.",
-        "en": "Individually implemented technical work as reported: hardware modules and integration, Expo mobile app, C# Windows desktop hub, and Firebase Realtime Database. Academic coauthors are credited in the publication."
+        "pt": "Hardware, integração dos módulos, aplicativo Expo, central C# e comunicação Firebase.",
+        "en": "Hardware, module integration, Expo app, C# hub and Firebase communication."
       },
       "media": [
         [
@@ -266,8 +254,12 @@
       ],
       "mediaKind": "photo",
       "result": {
-        "pt": "Protótipo físico funcional, testado em ambiente doméstico e apresentado no TCC de 2024. Publicação acadêmica no COBRIC. Não foram fornecidas métricas de implantação comercial.",
-        "en": "Working physical prototype, tested at home and presented in the 2024 capstone. Academic publication at COBRIC. No commercial deployment metrics were provided."
+        "pt": "Protótipo físico funcional, testado em ambiente doméstico e apresentado no TCC de 2024. Pesquisa publicada no COBRIC.",
+        "en": "A working physical prototype, tested at home and presented in the 2024 capstone. Research published at COBRIC."
+      },
+      "credits": {
+        "pt": "TCC de Engenharia da Computação · publicação com Luis Fernando Pompeo Ferrara.",
+        "en": "Computer Engineering capstone · publication with Luis Fernando Pompeo Ferrara."
       }
     },
     {
@@ -287,12 +279,12 @@
       ],
       "image": "line-car-show.webp",
       "text": {
-        "pt": "Carrinho autônomo que segue uma trajetória com sensores infravermelhos e controle de motores.",
-        "en": "Autonomous line-following car using infrared sensors and motor control."
+        "pt": "Carrinho autônomo que acompanha uma linha com sensores infravermelhos e controle de motores.",
+        "en": "An autonomous vehicle that follows a line using infrared sensors and motor control."
       },
       "details": {
-        "pt": "Protótipo físico de robótica montado durante a faculdade. O veículo utiliza sensores infravermelhos para detectar a linha e motores para corrigir a trajetória. O usuário confirmou que funcionou.",
-        "en": "Physical robotics prototype assembled during college. Infrared sensors detect the track, and motors correct the vehicle’s direction. A functioning result was confirmed."
+        "pt": "Sensores infravermelhos identificam o traçado e orientam a correção dos motores. O protótipo conecta eletrônica e robótica em uma demonstração prática de navegação autônoma.",
+        "en": "Infrared sensors detect the path and guide motor adjustments. The prototype connects electronics and robotics in a practical demonstration of autonomous navigation."
       },
       "role": {
         "pt": "Montagem física completa do carrinho. A programação foi realizada por outra pessoa.",
@@ -316,7 +308,11 @@
           "line-car-event.webp"
         ]
       ],
-      "mediaKind": "photo"
+      "mediaKind": "photo",
+      "credits": {
+        "pt": "Robótica acadêmica · montagem física própria; programação por outro integrante.",
+        "en": "Academic robotics · physical assembly by me; programming by another team member."
+      }
     },
     {
       "id": "lembre",
@@ -324,7 +320,7 @@
         "pt": "Lembre & Pague",
         "en": "Lembre & Pague"
       },
-      "category": "apps",
+      "category": "forge",
       "year": "2026",
       "status": "statusDone",
       "tech": [
@@ -334,12 +330,12 @@
       ],
       "glyph": "◷",
       "text": {
-        "pt": "Aplicativo pessoal de controle de contas, recorrências, vencimentos e comprovantes.",
-        "en": "Personal finance organizer for bills, recurring payments, due dates, and receipts."
+        "pt": "Aplicativo para organizar contas, pagamentos e vencimentos, com controle de recorrências e acompanhamento financeiro.",
+        "en": "An app for organizing bills, payments and due dates, with recurring entries and financial tracking."
       },
       "details": {
-        "pt": "Aplicativo autoral finalizado em Flutter/Dart e SQLite para organizar contas e lembretes. As imagens são composições promocionais fornecidas pelo autor. Não há lançamento em loja confirmado.",
-        "en": "Completed independent Flutter/Dart and SQLite app for organizing bills and reminders. Images are promotional compositions supplied by the author. No app-store release is confirmed."
+        "pt": "O Lembre & Pague reúne a organização de contas em uma interface prática, facilitando o acompanhamento de vencimentos, pagamentos recorrentes e registros financeiros. Desenvolvido em Flutter/Dart, utiliza SQLite para armazenamento local.",
+        "en": "Lembre & Pague brings bill management into a practical interface for tracking due dates, recurring payments and financial records. Built with Flutter/Dart, it uses SQLite for local storage."
       },
       "role": {
         "pt": "Projeto próprio; desenvolvimento em Flutter/Dart e persistência local em SQLite.",
@@ -358,9 +354,12 @@
       ],
       "mediaKind": "mockup",
       "collections": [
-        "personal",
         "forge"
-      ]
+      ],
+      "features": {
+        "pt": "Organização de contas e vencimentos\nAcompanhamento de pagamentos e recorrências\nRegistros financeiros com armazenamento local SQLite",
+        "en": "Bill and due date organization\nPayment and recurring entry tracking\nFinancial records with local SQLite storage"
+      }
     },
     {
       "id": "forge",
@@ -368,7 +367,7 @@
         "pt": "Lancelot Forge — 3D Print",
         "en": "Lancelot Forge — 3D Print"
       },
-      "category": "apps",
+      "category": "forge",
       "year": "2026",
       "status": "statusWip",
       "tech": [
@@ -378,12 +377,12 @@
       ],
       "glyph": "⬡",
       "text": {
-        "pt": "Software de apoio à precificação, propostas e gestão de trabalhos de impressão 3D.",
-        "en": "Tool for pricing, quoting, and managing 3D printing jobs."
+        "pt": "Sistema para gestão de orçamentos, clientes e projetos de impressão 3D.",
+        "en": "A system for managing quotes, clients and 3D printing projects."
       },
       "details": {
-        "pt": "Software autoral em desenvolvimento para apoiar orçamentos e a gestão de impressão 3D. A composição visual fornecida apresenta a proposta do produto; não comprova a implementação de todos os elementos ilustrados.",
-        "en": "Independent software in development to support quoting and 3D printing management. The supplied visual composition presents the product direction; it does not verify implementation of every illustrated feature."
+        "pt": "O Lancelot Forge — 3D Print está em desenvolvimento para organizar trabalhos de impressão 3D. Seu foco reúne cálculos de orçamento, cadastro de clientes, propostas comerciais e gerenciamento dos projetos em uma interface integrada.",
+        "en": "Lancelot Forge — 3D Print is being developed to organize 3D printing work. It focuses on cost calculations, client records, commercial proposals and project management within an integrated interface."
       },
       "role": {
         "pt": "Concepção do produto, regras de negócio, implementação e testes.",
@@ -398,7 +397,6 @@
       ],
       "mediaKind": "mockup",
       "collections": [
-        "personal",
         "forge"
       ]
     },
@@ -418,16 +416,16 @@
       ],
       "glyph": "⚗",
       "text": {
-        "pt": "Calculadora didática para auxiliar técnicos em Química em atividades e estudos.",
-        "en": "Educational chemistry calculator for chemistry technicians and students."
+        "pt": "Uma plataforma de ferramentas químicas que reúne cálculos, consultas e recursos para atividades técnicas, estudos e aplicações laboratoriais.",
+        "en": "A chemistry toolkit bringing together calculations, reference tools and resources for technical work, study and laboratory applications."
       },
       "details": {
-        "pt": "Projeto em desenvolvimento que reúne ferramentas de cálculo de Química com foco didático e apoio a rotinas técnicas. Ainda não é apresentado como produto finalizado.",
-        "en": "Work-in-progress toolkit that brings chemistry calculations together for teaching and technical tasks. It is not being presented as a completed product."
+        "pt": "O Quimera centraliza ferramentas e calculadoras científicas em uma aplicação organizada, permitindo trabalhar com diferentes operações e conceitos químicos em uma única interface. O projeto evolui com foco na precisão dos cálculos, usabilidade e apoio às atividades técnicas.",
+        "en": "Quimera brings scientific tools and calculators into an organized application, making it possible to work with different chemical operations and concepts in one interface. Development focuses on calculation accuracy, usability and support for technical activities."
       },
       "role": {
-        "pt": "Idealização e direcionamento funcional, com desenvolvimento iterativo auxiliado por IA.",
-        "en": "Product direction and functional design, with AI-assisted iterative development."
+        "pt": "Concepção e desenvolvimento das ferramentas químicas.",
+        "en": "Product design and development of chemistry tools."
       },
       "image": "quimera.webp",
       "media": [
@@ -442,7 +440,6 @@
       ],
       "mediaKind": "mockup",
       "collections": [
-        "personal",
         "forge"
       ]
     },
@@ -462,16 +459,16 @@
       ],
       "glyph": "HD",
       "text": {
-        "pt": "TCC de Jogos Digitais: protótipo 2D cyberpunk com narrativa original.",
-        "en": "Game Development capstone: a cyberpunk 2D prototype with an original storyline."
+        "pt": "Protótipo 2D cyberpunk que combina narrativa original, inimigos e cenários em pixel art.",
+        "en": "A 2D cyberpunk prototype combining an original story, enemies and pixel-art environments."
       },
       "details": {
-        "pt": "Jogo inspirado na ficção cyberpunk, sobre um ex-boxeador coagido a perseguir criminosos e tentando recuperar sua liberdade. O grupo apresentou um alfa inicial; o jogo não foi concluído como lançamento comercial.",
-        "en": "Cyberpunk game about a former boxer forced to hunt criminals while seeking freedom. The team presented an early alpha; it was not finished as a commercial release."
+        "pt": "Hunting Dogs acompanha um ex-boxeador coagido a perseguir criminosos enquanto tenta recuperar sua liberdade. O TCC de Jogos Digitais chegou a um protótipo alfa, com identidade visual e narrativa próprias.",
+        "en": "Hunting Dogs follows a former boxer forced to pursue criminals while trying to regain his freedom. This Digital Games capstone reached an alpha prototype with its own visual identity and story."
       },
       "role": {
-        "pt": "Projeto em grupo. Nichollas criou o roteiro, os conceitos visuais de todos os inimigos e cenários; a programação desses elementos foi feita por outro integrante.",
-        "en": "Team project. Nichollas wrote the storyline and created visual designs for enemies and environments; another member implemented their code."
+        "pt": "Roteiro, conceitos visuais dos inimigos e cenários; programação por outro integrante.",
+        "en": "Story, enemy visual concepts and environments; programming by another team member."
       },
       "links": [
         [
@@ -490,7 +487,11 @@
           "hunting-poster.webp"
         ]
       ],
-      "mediaKind": "poster"
+      "mediaKind": "poster",
+      "credits": {
+        "pt": "TCC em equipe · roteiro, conceitos de inimigos e cenários de minha autoria.",
+        "en": "Team capstone · story, enemy concepts and environments by me."
+      }
     },
     {
       "id": "acidjump",
@@ -508,12 +509,12 @@
       ],
       "glyph": "↑",
       "text": {
-        "pt": "Jogo de prova: escapar de ácido ascendente, lasers, espinhos e armadilhas.",
-        "en": "Exam project: escape rising acid, lasers, spikes, and other traps."
+        "pt": "Plataforma 2D em que um robô altera a gravidade para escapar de ácido ascendente e armadilhas.",
+        "en": "A 2D platformer where a robot changes gravity to escape rising acid and traps."
       },
       "details": {
-        "pt": "Jogo em Unity desenvolvido individualmente, com assets iniciais fornecidos pelo professor. O robô precisava alterar a gravidade, alcançar chaves e abrir a porta antes que o ácido subisse.",
-        "en": "Individually built Unity game using initial assets provided by the teacher. The robot switches gravity, collects keys, and reaches the exit before the acid rises."
+        "pt": "Chaves, portas, lasers e espinhos compõem desafios de movimento e tempo. A mecânica de inversão da gravidade permite atravessar os cenários antes que o ácido alcance o robô.",
+        "en": "Keys, doors, lasers and spikes create movement and timing challenges. Gravity reversal lets the robot cross each environment before the acid catches up."
       },
       "role": {
         "pt": "Implementação individual em Unity, incluindo mecânicas e lógica. As artes foram fornecidas pelo professor.",
@@ -530,7 +531,11 @@
           "acid-gameplay.mp4"
         ]
       ],
-      "mediaKind": "gameplay"
+      "mediaKind": "gameplay",
+      "credits": {
+        "pt": "Atividade acadêmica · mecânicas e programação próprias; artes fornecidas pelo professor.",
+        "en": "Coursework · mechanics and programming by me; artwork supplied by the instructor."
+      }
     },
     {
       "id": "aditown",
@@ -547,12 +552,12 @@
       ],
       "glyph": "+",
       "text": {
-        "pt": "Jogo educativo infantil de operações matemáticas, com tempo, pontuação e som.",
-        "en": "Educational math game for children, with a timer, scoring, and sound."
+        "pt": "Jogo educativo de operações matemáticas com desafios cronometrados, pontuação e som.",
+        "en": "An educational arithmetic game with timed challenges, scoring and sound."
       },
       "details": {
-        "pt": "Atividade universitária que pedia a criação de um jogo para ensinar algo às crianças. A aplicação usa operações matemáticas aleatórias, pontuação, tempo e elementos gráficos.",
-        "en": "University assignment to create a children’s educational game. Includes randomized math problems, scoring, timers, and graphic elements."
+        "pt": "Aditown transforma operações matemáticas aleatórias em desafios para crianças. A interface em C# e Windows Forms combina desenhos próprios, tempo e pontuação para conduzir a atividade.",
+        "en": "Aditown turns randomly generated arithmetic operations into challenges for children. Its C# and Windows Forms interface combines original drawings, a timer and scoring to guide the activity."
       },
       "role": {
         "pt": "Programação e desenhos do projeto.",
@@ -572,7 +577,7 @@
         "pt": "Traverna",
         "en": "Traverna"
       },
-      "category": "apps",
+      "category": "forge",
       "year": "2026",
       "status": "statusDone",
       "tech": [
@@ -581,12 +586,12 @@
       ],
       "glyph": "T",
       "text": {
-        "pt": "Experimento de aplicativo para compartilhar jogos, filmes e momentos com amigos.",
-        "en": "Experimental app to share games, movies, and hangouts with friends."
+        "pt": "Aplicativo de comunicação com identidade medieval para compartilhar experiências com amigos.",
+        "en": "A communication app with a medieval identity for sharing experiences with friends."
       },
       "details": {
-        "pt": "Projeto pessoal concluído, idealizado para compartilhar tela e experiências com amigos. Apresentado como trabalho experimental; o aplicativo não será disponibilizado ao público.",
-        "en": "Completed personal experiment for screen sharing and social experiences with friends. Showcased as a project; the application itself is not distributed."
+        "pt": "O Traverna combina uma interface inspirada em tavernas medievais com uma proposta de convivência digital. Compartilhamento de tela e experiências com jogos e filmes orientam um ambiente próprio para reunir amigos.",
+        "en": "Traverna combines a tavern-inspired interface with a shared digital experience. Screen sharing and shared gaming and movie experiences shape a space for getting friends together."
       },
       "role": {
         "pt": "Concepção e desenvolvimento do experimento.",
@@ -601,7 +606,7 @@
       ],
       "mediaKind": "mockup",
       "collections": [
-        "personal"
+        "forge"
       ]
     },
     {
@@ -610,7 +615,7 @@
         "pt": "NeuroLaudo",
         "en": "NeuroLaudo"
       },
-      "category": "apps",
+      "category": "forge",
       "year": "2026",
       "status": "statusDone",
       "tech": [
@@ -620,12 +625,12 @@
       ],
       "glyph": "N+",
       "text": {
-        "pt": "Aplicativo para apoiar a organização e a geração de laudos neuropsicológicos.",
-        "en": "Application to support the organization and generation of neuropsychological reports."
+        "pt": "Aplicativo que organiza informações e facilita a preparação, revisão e geração de laudos neuropsicológicos.",
+        "en": "An app that organizes information and supports the preparation, review and generation of neuropsychological reports."
       },
       "details": {
-        "pt": "Aplicativo concluído para organizar arquivos e apoiar a produção de laudos. As imagens fornecidas mostram uma demonstração com dados fictícios; o software não é distribuído por este portfólio.",
-        "en": "Completed application for organizing files and supporting report preparation. Supplied images show a demonstration using fictional data; the software is not distributed through this portfolio."
+        "pt": "O NeuroLaudo oferece uma interface para organizar informações, documentos e resultados, apoiando o fluxo de elaboração e revisão de laudos. O sistema facilita a estruturação dos documentos e sua preparação para exportação.",
+        "en": "NeuroLaudo provides an interface for organizing information, documents and results throughout the report writing and review process. It helps structure documents and prepare them for export."
       },
       "role": {
         "pt": "Desenvolvimento do aplicativo e evolução das funcionalidades conforme necessidades apresentadas.",
@@ -648,8 +653,12 @@
       ],
       "mediaKind": "demo",
       "collections": [
-        "personal"
-      ]
+        "forge"
+      ],
+      "features": {
+        "pt": "Organização de informações e documentos\nPreparação e revisão de laudos\nEstruturação de documentos para exportação",
+        "en": "Information and document organization\nReport preparation and review\nDocument structuring for export"
+      }
     },
     {
       "id": "cof",
@@ -667,12 +676,12 @@
       ],
       "glyph": "C2",
       "text": {
-        "pt": "Aplicativo educacional desenvolvido para aulas e atividades de estudantes de Medicina.",
-        "en": "Educational app developed for medical students’ lessons and coursework."
+        "pt": "Aplicativo educacional voltado a videoaulas, conteúdos e atividades de estudantes de Medicina.",
+        "en": "An educational app for medical students, with video lessons, learning content and activities."
       },
       "details": {
-        "pt": "Projeto profissional para a Medcof. Aplicativo funcional para visualização de videoaulas e atividades, posteriormente descontinuado. Informações restritas às que podem ser divulgadas publicamente.",
-        "en": "Professional project for Medcof. Working app for video lessons and learning activities, subsequently discontinued. Description limited to publicly shareable details."
+        "pt": "O Cof2Go reuniu videoaulas e atividades em uma experiência móvel para estudantes de Medicina da Medcof. O aplicativo foi funcional e posteriormente descontinuado.",
+        "en": "Cof2Go brought video lessons and activities together in a mobile experience for Medcof medical students. The app was functional and was later discontinued."
       },
       "role": {
         "pt": "Montagem integral do aplicativo, implementação de funcionalidades, interfaces segundo design fornecido e integrações de APIs. Projeto realizado no contexto da CodeCycle.",
@@ -689,7 +698,11 @@
           "cof2go-overview.webp"
         ]
       ],
-      "mediaKind": "mockup"
+      "mediaKind": "mockup",
+      "credits": {
+        "pt": "CodeCycle · produto para a Medcof.",
+        "en": "CodeCycle · product for Medcof."
+      }
     },
     {
       "id": "global",
@@ -706,18 +719,22 @@
       ],
       "glyph": "GT",
       "text": {
-        "pt": "Participação na equipe técnica do aplicativo de gestão de tarefas em campo.",
-        "en": "Technical-team involvement in a published field-task management app."
+        "pt": "Aplicativo de gerenciamento de tarefas e atividades em campo, voltado à organização de operações e acompanhamento de equipes.",
+        "en": "A field task management app for organizing operations and tracking teams."
       },
       "details": {
-        "pt": "Experiência profissional na equipe técnica de um aplicativo publicado. Apresentação institucional limitada às informações autorizadas; sem código, telas ou detalhes internos.",
-        "en": "Professional experience on the technical team of a released application. Institutional presentation limited to authorized information, with no source code, screenshots or internal details."
+        "pt": "O GlobalTask apoia a organização de tarefas e atividades realizadas em campo. Na CodeCycle, atuo tecnicamente na evolução e manutenção do aplicativo.",
+        "en": "GlobalTask supports the organization of field tasks and activities. At CodeCycle, I contribute to the technical development and maintenance of the app."
       },
       "role": {
         "pt": "Integrante da equipe técnica do aplicativo em 2026.",
         "en": "Member of the application technical team in 2026."
       },
-      "mediaKind": "photo"
+      "mediaKind": "photo",
+      "credits": {
+        "pt": "Experiência profissional · CodeCycle.",
+        "en": "Professional experience · CodeCycle."
+      }
     },
     {
       "id": "shelf",
@@ -734,18 +751,22 @@
       ],
       "glyph": "SH",
       "text": {
-        "pt": "Participação técnica em aplicativo de gerenciamento de estoque da CodeCycle.",
-        "en": "Technical work on CodeCycle’s inventory-management app."
+        "pt": "Aplicativo para organização e gerenciamento de estoques, com foco no controle de informações e processos operacionais.",
+        "en": "An inventory management app focused on organizing information and operational processes."
       },
       "details": {
-        "pt": "Experiência profissional na equipe técnica de um aplicativo publicado. Apresentação institucional limitada às informações autorizadas; sem código, telas ou detalhes internos.",
-        "en": "Professional experience on the technical team of a released application. Institutional presentation limited to authorized information, with no source code, screenshots or internal details."
+        "pt": "O ShelfHive reúne informações de estoque para apoiar a organização das operações. Minha atuação na CodeCycle envolve a evolução técnica do aplicativo.",
+        "en": "ShelfHive brings inventory information together to support organized operations. My work at CodeCycle includes the technical development of the app."
       },
       "role": {
         "pt": "Integrante da equipe técnica do aplicativo em 2026.",
         "en": "Member of the application technical team in 2026."
       },
-      "mediaKind": "photo"
+      "mediaKind": "photo",
+      "credits": {
+        "pt": "Experiência profissional · CodeCycle.",
+        "en": "Professional experience · CodeCycle."
+      }
     },
     {
       "id": "fert",
@@ -763,12 +784,12 @@
       ],
       "glyph": "ρ",
       "text": {
-        "pt": "Estudo de densidade aparente de fertilizantes e validação de resultados.",
-        "en": "Study of apparent bulk density of fertilizers and validation of results."
+        "pt": "Estudo de densidade aparente de fertilizantes com análise de amostras e comparação de resultados.",
+        "en": "A study of fertilizer bulk density through sample analysis and comparison of results."
       },
       "details": {
-        "pt": "TCC em equipe sobre densidade aparente sem compactação de ureia, superfosfato simples e cloreto de potássio granulado, pelo método ASTM D1895 descrito no relatório. Foram realizadas dez repetições por amostra após calibração volumétrica.",
-        "en": "Team capstone studying uncompacted bulk density of urea, single superphosphate and granular potassium chloride, using the ASTM D1895 method described in the report. Ten measurements per sample followed volumetric calibration."
+        "pt": "O TCC investiga a densidade aparente sem compactação de ureia, superfosfato simples e cloreto de potássio granulado. O procedimento segue o método ASTM D1895 descrito no trabalho, com calibração volumétrica e dez repetições por amostra.",
+        "en": "This capstone investigates the loose bulk density of urea, single superphosphate and granular potassium chloride. The procedure follows the ASTM D1895 method described in the study, with volumetric calibration and ten repetitions per sample."
       },
       "role": {
         "pt": "Coautor do TCC com Caio Cesar Pereira da Silva e Ygor Rodrigues dos Santos. O relatório documenta o trabalho em equipe; não atribui individualmente cada procedimento.",
@@ -783,8 +804,12 @@
       ],
       "mediaKind": "photo",
       "result": {
-        "pt": "Médias relatadas: ureia 748,26 g/L; superfosfato simples 1114,44 g/L; KCl granulado 1092,78 g/L. Valores extraídos do resumo do TCC fornecido, sem revalidação independente.",
-        "en": "Reported means: urea 748.26 g/L; single superphosphate 1114.44 g/L; granular KCl 1092.78 g/L. Values come from the supplied capstone abstract and were not independently revalidated."
+        "pt": "Médias obtidas no TCC: ureia 748,26 g/L; superfosfato simples 1114,44 g/L; KCl granulado 1092,78 g/L.",
+        "en": "Mean values obtained in the capstone study: urea 748.26 g/L; single superphosphate 1114.44 g/L; granular KCl 1092.78 g/L."
+      },
+      "credits": {
+        "pt": "Em coautoria com Caio Cesar Pereira da Silva e Ygor Rodrigues dos Santos.",
+        "en": "Coauthored with Caio Cesar Pereira da Silva and Ygor Rodrigues dos Santos."
       }
     },
     {
@@ -803,12 +828,12 @@
       ],
       "glyph": "H₂",
       "text": {
-        "pt": "Modelagem e montagem de maquete didática de processo industrial.",
-        "en": "Design and assembly of an educational industrial-process scale model."
+        "pt": "Maquete didática que representa as etapas do processo industrial de produção de ácido sulfúrico.",
+        "en": "An educational scale model showing the stages of industrial sulfuric acid production."
       },
       "details": {
-        "pt": "Modelo didático do processo industrial de ácido sulfúrico: combustão, conversão, absorção, diluição, reciclo e expedição. Fotografias do conjunto documentam a modelagem e a montagem.",
-        "en": "Educational scale model of sulfuric acid production: combustion, conversion, absorption, dilution, recycling and shipping. Photos document the model design and assembly."
+        "pt": "A maquete organiza as etapas de combustão, conversão, absorção, diluição, reciclo e expedição. A modelagem e montagem tornam visível o encadeamento do processo industrial.",
+        "en": "The model lays out combustion, conversion, absorption, dilution, recycling and dispatch. Its design and assembly make the industrial process flow tangible."
       },
       "role": {
         "pt": "Modelagem e montagem da maquete.",
@@ -843,12 +868,12 @@
       ],
       "glyph": "⌂",
       "text": {
-        "pt": "Protótipo acadêmico de aplicativo para venda de imóveis.",
-        "en": "Academic real-estate listing app prototype."
+        "pt": "Protótipo de aplicativo imobiliário com interface em Python e Kivy.",
+        "en": "A real estate app prototype with a Python and Kivy interface."
       },
       "details": {
-        "pt": "Projeto universitário de Python/Kivy para venda de imóveis. A integridade de todos os fluxos de funcionamento ainda não foi confirmada.",
-        "en": "University Python/Kivy real estate assignment. Full functionality has not been verified."
+        "pt": "O KAS explora a apresentação de imóveis em uma aplicação acadêmica. Python, Kivy e SQLite compõem a base de interface e armazenamento do protótipo.",
+        "en": "KAS explores property listings in an academic application. Python, Kivy and SQLite form the prototype’s interface and storage foundation."
       },
       "role": {
         "pt": "Desenvolvimento do trabalho acadêmico.",
@@ -878,12 +903,12 @@
       ],
       "glyph": "ƒx",
       "text": {
-        "pt": "Acervo de exercícios de algoritmos, Fourier, Widrow-Hoff, Kivy e Machine Learning.",
-        "en": "Archive of exercises in algorithms, Fourier series, Widrow-Hoff, Kivy, and Machine Learning."
+        "pt": "Algoritmos, matemática aplicada e interfaces em uma coleção de estudos de programação.",
+        "en": "Algorithms, applied mathematics and interfaces in a collection of programming studies."
       },
       "details": {
-        "pt": "Coleção de exercícios do período de formação, agrupados como acervo de aprendizagem — não como produtos finalizados. Inclui matemática aplicada, interfaces, C#, Python e técnicas introdutórias de aprendizado de máquina.",
-        "en": "Coursework grouped as a learning archive rather than finished products. Includes applied math, interfaces, C#, Python, and introductory machine-learning techniques."
+        "pt": "Exercícios de C# e Python conectam séries de Fourier, Widrow–Hoff, interfaces Kivy e fundamentos de Machine Learning. A coleção reúne diferentes abordagens de resolução de problemas estudadas durante a graduação.",
+        "en": "C# and Python exercises connect Fourier series, Widrow–Hoff, Kivy interfaces and Machine Learning fundamentals. The collection brings together problem-solving approaches studied during my degree."
       },
       "role": {
         "pt": "Estudos, exercícios e experimentos individuais.",
@@ -911,12 +936,12 @@
         "Mathematics"
       ],
       "text": {
-        "pt": "Exercício universitário de cálculo de séries de Fourier. Funcionamento relatado pelo autor, sem novas medições de precisão.",
-        "en": "University Fourier-series calculation exercise. Functionality reported by the author, with no new accuracy measurements."
+        "pt": "Calculadora acadêmica de séries de Fourier em C#.",
+        "en": "An academic Fourier series calculator built with C#."
       },
       "details": {
-        "pt": "Exercício universitário de cálculo de séries de Fourier. Funcionamento relatado pelo autor, sem novas medições de precisão.",
-        "en": "University Fourier-series calculation exercise. Functionality reported by the author, with no new accuracy measurements."
+        "pt": "A aplicação explora séries de Fourier e sua implementação computacional. O exercício aproxima matemática aplicada e programação em C# durante a graduação em Engenharia da Computação.",
+        "en": "The application explores Fourier series and their computational implementation. This coursework connects applied mathematics with C# programming during my Computer Engineering degree."
       },
       "role": {
         "pt": "Desenvolvimento de exercícios durante a graduação.",
@@ -943,12 +968,12 @@
         "Mathematics"
       ],
       "text": {
-        "pt": "Estudo acadêmico do algoritmo Widrow–Hoff, preservado como exercício de aprendizagem.",
-        "en": "Academic study of the Widrow–Hoff algorithm, retained as a learning exercise."
+        "pt": "Implementação acadêmica do algoritmo de aprendizagem Widrow–Hoff.",
+        "en": "An academic implementation of the Widrow–Hoff learning algorithm."
       },
       "details": {
-        "pt": "Estudo acadêmico do algoritmo Widrow–Hoff, preservado como exercício de aprendizagem.",
-        "en": "Academic study of the Widrow–Hoff algorithm, retained as a learning exercise."
+        "pt": "O estudo explora o algoritmo Widrow–Hoff e sua relação com matemática e aprendizagem computacional. A implementação faz parte dos exercícios de algoritmos da graduação.",
+        "en": "This study explores the Widrow–Hoff algorithm and its connection to mathematics and computational learning. The implementation is part of my undergraduate algorithm coursework."
       },
       "role": {
         "pt": "Desenvolvimento de exercícios durante a graduação.",
@@ -976,12 +1001,12 @@
         "pandas"
       ],
       "text": {
-        "pt": "Exercícios com KMeans, StandardScaler e visualização com matplotlib.",
-        "en": "Exercises using KMeans, StandardScaler and matplotlib visualization."
+        "pt": "Análise e agrupamento de dados em Python com KMeans e visualizações.",
+        "en": "Data analysis and clustering in Python using KMeans and visualizations."
       },
       "details": {
-        "pt": "Exercícios com KMeans, StandardScaler e visualização com matplotlib.",
-        "en": "Exercises using KMeans, StandardScaler and matplotlib visualization."
+        "pt": "Os exercícios combinam pandas, StandardScaler e KMeans para preparação e agrupamento de dados. Gráficos com matplotlib ajudam a explorar os resultados.",
+        "en": "These exercises combine pandas, StandardScaler and KMeans for data preparation and clustering. Matplotlib charts help explore the results."
       },
       "role": {
         "pt": "Desenvolvimento de exercícios durante a graduação.",
@@ -1007,12 +1032,12 @@
         "Python"
       ],
       "text": {
-        "pt": "Coleção de trabalhos universitários de Python; apresentada como acervo acadêmico.",
-        "en": "Collection of university Python assignments, presented as an academic archive."
+        "pt": "Trabalhos em Python que exploram programação e resolução de problemas.",
+        "en": "Python coursework exploring programming and problem solving."
       },
       "details": {
-        "pt": "Coleção de trabalhos universitários de Python; apresentada como acervo acadêmico.",
-        "en": "Collection of university Python assignments, presented as an academic archive."
+        "pt": "Uma coleção de atividades da graduação com diferentes aplicações da linguagem Python. Os exercícios registram a prática de programação e a construção de soluções ao longo do curso.",
+        "en": "A collection of undergraduate assignments covering different uses of Python. The exercises reflect hands-on programming and solution building throughout the course."
       },
       "role": {
         "pt": "Desenvolvimento de exercícios durante a graduação.",
@@ -1039,12 +1064,12 @@
         "Kivy"
       ],
       "text": {
-        "pt": "Exercícios de aplicações e interfaces em Python/Kivy.",
-        "en": "Application and interface exercises in Python/Kivy."
+        "pt": "Interfaces e aplicações em Python com o framework Kivy.",
+        "en": "Python interfaces and applications built with Kivy."
       },
       "details": {
-        "pt": "Exercícios de aplicações e interfaces em Python/Kivy.",
-        "en": "Application and interface exercises in Python/Kivy."
+        "pt": "Os trabalhos exploram componentes visuais e a organização de aplicações em Python/Kivy. As interfaces conectam a lógica de programação à interação com o usuário.",
+        "en": "These assignments explore visual components and application structure in Python/Kivy. The interfaces connect programming logic with user interaction."
       },
       "role": {
         "pt": "Desenvolvimento de exercícios durante a graduação.",
@@ -1109,8 +1134,8 @@
         "en": "Technical diploma"
       },
       "note": {
-        "pt": "Formação no Liceu Santista · instituição emissora conforme diploma.",
-        "en": "Studies at Liceu Santista · issuer as printed on the diploma."
+        "pt": "Formação técnica em Química · 2026.",
+        "en": "Technical education in Chemistry · 2026."
       }
     },
     {
@@ -1145,8 +1170,8 @@
         "en": "Event participation"
       },
       "note": {
-        "pt": "22 de novembro de 2025 · participação, sem alegação de certificação técnica.",
-        "en": "November 22, 2025 · event participation, not a technical certification."
+        "pt": "Participação em 22 de novembro de 2025.",
+        "en": "Attended on November 22, 2025."
       }
     },
     {
@@ -1163,8 +1188,8 @@
         "en": "Course completion certificate"
       },
       "note": {
-        "pt": "Formação complementar · inglês intermediário conforme perfil aprovado.",
-        "en": "Additional studies · intermediate English as stated in the approved profile."
+        "pt": "Conclusão do curso Proficiency em 2023.",
+        "en": "Completed the Proficiency course in 2023."
       }
     }
   ]

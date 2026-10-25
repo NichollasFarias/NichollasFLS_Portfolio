@@ -37,7 +37,7 @@ _flutter.buildConfig = {"engineRevision":"052f31d115eceda8cbff1b3481fcde4330c4ae
 
 // Bump the release token when publishing a new build to avoid stale CDN/browser entrypoints.
 for (const build of _flutter.buildConfig.builds) {
-  if (build.mainJsPath) build.mainJsPath += '?v=1.1.0-r1';
+  if (build.mainJsPath) build.mainJsPath += '?v=1.1.1-r1';
 }
 _flutter.loader.load({
   config: {canvasKitBaseUrl: 'canvaskit/'},
