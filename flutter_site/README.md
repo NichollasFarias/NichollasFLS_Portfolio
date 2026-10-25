@@ -40,3 +40,5 @@ Ao usar este projeto como subpasta `flutter_site` do repositório histórico, o 
 ## Conteúdo e privacidade
 
 Atualize ambas as línguas dos campos de cada projeto. Nunca incluir credenciais, documentos originais com dados pessoais ou projetos excluídos. Não inserir código de TCC no bundle web. Sem analytics, rastreamento ou formulário. Idioma é o único dado persistido.
+
+Ao publicar outra compilação, atualize o token de release em web/index.html e web/flutter_bootstrap.js para invalidar o cache do entrypoint.
