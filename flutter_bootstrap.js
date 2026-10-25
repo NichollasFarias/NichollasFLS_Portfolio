@@ -35,6 +35,10 @@ if (!window._flutter) {
 }
 _flutter.buildConfig = {"engineRevision":"052f31d115eceda8cbff1b3481fcde4330c4ae12","builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}],"useLocalCanvasKit":true};
 
+// Bump the release token when publishing a new build to avoid stale CDN/browser entrypoints.
+for (const build of _flutter.buildConfig.builds) {
+  if (build.mainJsPath) build.mainJsPath += '?v=1.0.0-r2';
+}
 _flutter.loader.load({
   config: {canvasKitBaseUrl: 'canvaskit/'},
   onEntrypointLoaded: async function(engineInitializer) {
